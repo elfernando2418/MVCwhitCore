@@ -1,16 +1,16 @@
 <?php
 
-var_dump( $_POST );
+//var_dump( $_POST );
 
 if(count($_POST)>0){
 
-    $lote = new LotData();
+   // $lote = new LotData();
 
-    $lote->name = $_POST["name"];
-	$lote->num_lot = $_POST["num_lot"];
-	$lote->dimension = $_POST["dimension"];
+   // $lote->name = $_POST["name"];
+	//$lote->num_lot = $_POST["num_lot"];
+	//$lote->dimension = $_POST["dimension"];
 
-	$lote->add();
+	//$lote->add();
 
 
 }
