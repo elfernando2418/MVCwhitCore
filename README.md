@@ -2,7 +2,7 @@ MODULO ---> LOTE
 
 o	CODIGO LOTE (STRING)
 o	NUMERO LOTE (INT)
-o	FECHA DE ELABORACION (DATE)
+o	FECHA DE ELABORACION (DATE)   
 --------------------------------------
 MODULO ---> MODULO DE PRODUCTO
 
