@@ -17,8 +17,11 @@
   // puedo cargar otras funciones iniciales
   // dentro de la funcion donde cargo la vista actual
   // como por ejemplo cargar el corte actual
-  View::load("lote");
+  View::load("lote_view");
 ?>
+
+
+
 <br><br>
 
 </body>
