@@ -1,10 +1,5 @@
 <?php
-
-
-// 13 de Abril del 2014
-// App.php
-// @brief obtiene las configuraciones, muestra y carga los contenidos necesarios.
-
+ 
 class App {
 
 	public function App($module){

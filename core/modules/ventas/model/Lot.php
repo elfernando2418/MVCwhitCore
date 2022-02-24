@@ -1,5 +1,5 @@
 <?php
-class LotData {
+class LotData { // nombre de tabla seguido de la palabra Data
 	public static $tablename = "lot";
 
 	public function LotData(){
@@ -33,7 +33,7 @@ class LotData {
 		$cnt = 0;
 		while($r = $query[0]->fetch_array()){
 			//esto cambia
-			$array[$cnt] = new LotData();
+			$array[$cnt] = new LotData();	// aqui cambia
 			//CAMBIA PERO ACORDE A LA ESTRUCTURA DEL CONTRUCTOR
 			$array[$cnt]->id = $r['id'];
 			$array[$cnt]->name = $r['name'];
@@ -54,7 +54,7 @@ class LotData {
 
 		$found = null;
 
-		$data = new LotData();
+		$data = new LotData(); // aqui cambia
 
 		while($r = $query[0]->fetch_array()){
 
@@ -77,6 +77,13 @@ class LotData {
 		Executor::doit($sql);
 	}
 
+
+	public function delete(){
+		
+		$sql = "U ->id";
+	
+		Executor::doit($sql);
+	}
 
 }
 
