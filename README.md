@@ -18,7 +18,7 @@ o	FECHA CADUCIDAD     (DATE) ---15 dias a partir de la fecha ingresada
 MODULO ---> MATERIA PRIMA
 
 o	CODIGO MATEIRA PRIMA        (STRING)
-o	ID NOMBRE TIPO MODULO       (INT)                      
+o	ID NOMBRE TIPO MATERIA       (INT)                      
                     (Crear una tabla de opciones, pueden ser 2, hijuelos y abonos)
 o	CANTIDAD                    (INT)
 
