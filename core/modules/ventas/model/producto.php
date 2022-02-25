@@ -4,14 +4,14 @@ class productoData { // nombre de tabla seguido de la palabra Data
 
 	public function productoData(){
         $this->id ="";
-        $this->prod_cod ="";
-        $this->prod_nom ="";
-        $this->prod_cali ="";
-        $this->prod_grado ="";
-        $this->prod_peso ="";
-        $this->num_lote ="";
-        $this->fecha_in ="";
-		$this->condicion =0;
+        $this->nombre ="";
+        $this->calibre ="";
+        $this->grado_brix ="";
+        $this->peso ="";
+        $this->id_lote ="";
+        $this->fecha_ingreso ="";
+        $this->fecha_caducidad ="";
+		$this->status =0;
 	}
 
 	public function add(){
@@ -97,8 +97,8 @@ class productoData { // nombre de tabla seguido de la palabra Data
 	
 		Executor::doit($sql);*/
 	}
-	public static function getAllName(){
-		$sql = "SELECT * FROM lote WHERE status = 1";
+	public static function getByTipo($idLote){
+		$sql = "SELECT * FROM producto WHERE status = 1 AND  id_lote = $idLote ";
 
 
 		$query = Executor::doit($sql);
@@ -107,11 +107,14 @@ class productoData { // nombre de tabla seguido de la palabra Data
 		$cnt = 0;
 		while($r = $query[0]->fetch_array()){
 			//esto cambia
-			$array[$cnt] = new LoteData();	// aqui cambia
+			$array[$cnt] = new productoData();	// aqui cambia
 			//CAMBIA PERO ACORDE A LA ESTRUCTURA DEL CONTRUCTOR
 			$array[$cnt]->id = $r['id'];
-			$array[$cnt]->numero = $r['numero'];
-
+			$array[$cnt]->nombre = $r['nombre'];
+			$array[$cnt]->id_lote = $r['id_lote'];
+			$array[$cnt]->fecha_ingreso = $r['fecha_ingreso'];
+			$array[$cnt]->fecha_caducidad = $r['fecha_caducidad'];
+  
 			$cnt++;
 		}
 		return $array;

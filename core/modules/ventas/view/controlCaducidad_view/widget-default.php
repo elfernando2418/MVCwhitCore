@@ -1,5 +1,5 @@
 <?php
-	$lotes = LoteData::getAllName();
+	$lotes = loteData::getAllName();
 
 ?>
 
@@ -18,7 +18,13 @@
     <div class="card-header py-3">
 
 
-        <div class="col-md-12 mt-1 mb-4">
+
+        <h6 class="m-0 font-weight-bold text-primary">Tabla de Productos</h6>
+    </div>
+    <div class="card-body">
+
+
+    <div class="col-md-12 mt-1 mb-4">
             <label for="dimension" class="form-label">Seleccione Lote</label>
             <div class="form-select" aria-label="Default select example">
                 <select onchange="onSelectTipo()" name="selectTipo" id="selectTipo" class="form-control">
@@ -39,31 +45,27 @@
         </div>
 
 
-        <h6 class="m-0 font-weight-bold text-primary">Tabla de Productos</h6>
-    </div>
-    <div class="card-body">
+
+        <div id="respuesta"></div>
+        <script>
+        function onSelectTipo() {
+            console.log('CAMBIO ESTO');
+
+            let tipo = 'tipo=' + document.getElementById("selectTipo").value;
+            $.ajax({
+                    url: 'core/modules/ventas/view/controlCaducidad_view/TableData.php',
+                    type: 'POST',
+                    data: tipo,
+                })
+                .done(function(res) {
+                    $('#respuesta').html(res)
+                })
+
+        }
+        </script>
 
 
-    <div id="respuesta"></div>
-                        <script>
-                        function onSelectTipo() {
-                            console.log('CAMBIO ESTO');
 
-                            let tipo = 'tipo=' + document.getElementById("selectTipo").value;
-                            $.ajax({
-                                    url: 'core/modules/ventas/view/controlCaducidad_view/TableData.php',
-                                    type: 'POST',
-                                    data: tipo,
-                                })
-                                .done(function(res) {
-                                    $('#respuesta').html(res)
-                                })
 
-                        }
-    </script>
-
- 
-
-      
     </div>
 </div>
