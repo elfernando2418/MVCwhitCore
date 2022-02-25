@@ -1,13 +1,13 @@
 <?php
-class LotData { // nombre de tabla seguido de la palabra Data
-	public static $tablename = "lot";
+class envio_productoData { // nombre de tabla seguido de la palabra Data
+	public static $tablename = " ";
 
-	public function LotData(){
+	public function envio_productoData(){
         $this->id ="";
-        $this->name ="";
-        $this->num_lot =0;
-        $this->dimension =0;
-		$this->condicion =0;
+        $this->codigo ="";
+        $this->numero ="";
+        $this->fecha_elaboracion ="";
+		$this->status ="";
 	}
 
 	public function add(){
@@ -84,6 +84,8 @@ class LotData { // nombre de tabla seguido de la palabra Data
 	
 		Executor::doit($sql);*/
 	}
+
+ 
 
 }
 

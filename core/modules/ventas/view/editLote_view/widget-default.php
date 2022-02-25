@@ -5,7 +5,7 @@
 
 
 
-  $lote = LotData::getById( $idLote );
+  $lote = LoteData::getById( $idLote );
 
 
   var_dump( $lote );

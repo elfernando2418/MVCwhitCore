@@ -1,5 +1,5 @@
 <?php
-	$lotes = LotData::getAll();
+	$lotes = LoteData::getAll();
 
 
 ?>

@@ -1,8 +1,8 @@
 <?php
-class productoData { // nombre de tabla seguido de la palabra Data
-	public static $tablename = "producto";
+class usuarioData { // nombre de tabla seguido de la palabra Data
+	public static $tablename = "";
 
-	public function productoData(){
+	public function usuarioData(){
         $this->id ="";
         $this->prod_cod ="";
         $this->prod_nom ="";
@@ -97,25 +97,7 @@ class productoData { // nombre de tabla seguido de la palabra Data
 	
 		Executor::doit($sql);*/
 	}
-	public static function getAllName(){
-		$sql = "SELECT * FROM lote WHERE status = 1";
-
-
-		$query = Executor::doit($sql);
-
-		$array = array();
-		$cnt = 0;
-		while($r = $query[0]->fetch_array()){
-			//esto cambia
-			$array[$cnt] = new LoteData();	// aqui cambia
-			//CAMBIA PERO ACORDE A LA ESTRUCTURA DEL CONTRUCTOR
-			$array[$cnt]->id = $r['id'];
-			$array[$cnt]->numero = $r['numero'];
-
-			$cnt++;
-		}
-		return $array;
-	}
+	 
 
 	
 
