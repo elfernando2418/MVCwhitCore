@@ -1,20 +1,20 @@
 <?php
 class materia_primaData { // nombre de tabla seguido de la palabra Data
-	public static $tablename = " ";
+	public static $tablename = "materia_prima";
 
 	public function materia_primaData(){
         $this->id ="";
         $this->codigo ="";
-        $this->numero ="";
-        $this->fecha_elaboracion ="";
-		$this->status ="";
+        $this->id_tipo_mateira =0;
+        $this->cantidad =0;
+		$this->status =0;
 	}
 
 	public function add(){
 
-	/*	$sql = "INSERT INTO lot (name, num_lot, dimension, condicion) ";
+	/*	$sql = "INSERT INTO materia_prima (codigo, id_tipo_mateira, cantidad, status) ";
 
-        $sql .= "value (\"$this->name\" ,\"$this->num_lot\" , $this->dimension , 1)";
+        $sql .= "value (\"$this->codigo\" ,\"$this->id_tipo_mateira\" , \"$this->cantidad\", 1)";
 
 		Executor::doit($sql);*/
 
@@ -24,7 +24,7 @@ class materia_primaData { // nombre de tabla seguido de la palabra Data
 
 	
 	public static function getAll(){
-	/*	$sql = "SELECT * FROM lot WHERE condicion = 1";
+	/*	$sql = "SELECT * FROM materia_prima WHERE status = 1";
 
 
 		$query = Executor::doit($sql);
@@ -33,13 +33,13 @@ class materia_primaData { // nombre de tabla seguido de la palabra Data
 		$cnt = 0;
 		while($r = $query[0]->fetch_array()){
 			//esto cambia
-			$array[$cnt] = new LotData();	// aqui cambia
+			$array[$cnt] = new materia_primaData();	// aqui cambia
 			//CAMBIA PERO ACORDE A LA ESTRUCTURA DEL CONTRUCTOR
 			$array[$cnt]->id = $r['id'];
-			$array[$cnt]->name = $r['name'];
-			$array[$cnt]->num_lot = $r['num_lot'];
-            $array[$cnt]->dimension = $r['dimension'];
-			$array[$cnt]->condicion = $r['dimension'];
+			$array[$cnt]->codigo = $r['codigo'];
+			$array[$cnt]->id_tipo_mateira = $r['id_tipo_mateira'];
+            $array[$cnt]->cantidad = $r['cantidad'];
+			$array[$cnt]->status = $r['status'];
 			$cnt++;
 		}
 		return $array;*/
@@ -48,20 +48,21 @@ class materia_primaData { // nombre de tabla seguido de la palabra Data
 
 	public static function getById($id){
 
-		/*$sql = "SELECT * FROM lot WHERE id= $id ";
+		/*$sql = "SELECT * FROM materia_prima WHERE id= $id ";
 
 		$query = Executor::doit($sql);
 
 		$found = null;
 
-		$data = new LotData(); // aqui cambia
+		$data = new materia_primaData(); // aqui cambia
 
 		while($r = $query[0]->fetch_array()){
 
 			$data->id = $r['id'];
-			$data->name = $r['name'];
-			$data->num_lot = $r['num_lot'];
-			$data->dimension = $r['dimension'];
+			$data->codigo = $r['codigo'];
+			$data->id_tipo_mateira = $r['id_tipo_mateira'];
+			$data->cantidad = $r['cantidad'];
+            $data->status = $r['status'];
 			$found = $data;
 			break;
 
@@ -72,7 +73,7 @@ class materia_primaData { // nombre de tabla seguido de la palabra Data
 
 	public function update(){
 		
-	/*	$sql = "UPDATE lot SET name = \"$this->name\" , num_lot = \"$this->num_lot\" , dimension = \"$this->dimension\" WHERE id = $this->id";
+	/*	$sql = "UPDATE materia_prima SET codigo = \"$this->codigo\" , id_tipo_mateira = \"$this->id_tipo_mateira\" , cantidad = \"$this->cantidad\" WHERE id = $this->id";
 	
 		Executor::doit($sql);*/
 	}
@@ -84,8 +85,6 @@ class materia_primaData { // nombre de tabla seguido de la palabra Data
 	
 		Executor::doit($sql);*/
 	}
-
- 
 
 }
 

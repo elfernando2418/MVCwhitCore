@@ -2,7 +2,7 @@
 class LoteData { // nombre de tabla seguido de la palabra Data
 	public static $tablename = "lote";
 
-	public function LoteData(){
+	public function loteData(){
         $this->id ="";
         $this->codigo ="";
         $this->numero ="";
@@ -12,9 +12,9 @@ class LoteData { // nombre de tabla seguido de la palabra Data
 
 	public function add(){
 
-	/*	$sql = "INSERT INTO lot (name, num_lot, dimension, condicion) ";
+	/*	$sql = "INSERT INTO lote (codigo, numero, fecha_elaboracion, status) ";
 
-        $sql .= "value (\"$this->name\" ,\"$this->num_lot\" , $this->dimension , 1)";
+        $sql .= "value (\"$this->codigo\" ,\"$this->numero\" , $this->fecha_elaboracion , 1)";
 
 		Executor::doit($sql);*/
 
@@ -24,7 +24,7 @@ class LoteData { // nombre de tabla seguido de la palabra Data
 
 	
 	public static function getAll(){
-	/*	$sql = "SELECT * FROM lot WHERE condicion = 1";
+	/*	$sql = "SELECT * FROM lote WHERE status = 1";
 
 
 		$query = Executor::doit($sql);
@@ -33,13 +33,13 @@ class LoteData { // nombre de tabla seguido de la palabra Data
 		$cnt = 0;
 		while($r = $query[0]->fetch_array()){
 			//esto cambia
-			$array[$cnt] = new LotData();	// aqui cambia
+			$array[$cnt] = new loteData();	// aqui cambia
 			//CAMBIA PERO ACORDE A LA ESTRUCTURA DEL CONTRUCTOR
 			$array[$cnt]->id = $r['id'];
-			$array[$cnt]->name = $r['name'];
-			$array[$cnt]->num_lot = $r['num_lot'];
-            $array[$cnt]->dimension = $r['dimension'];
-			$array[$cnt]->condicion = $r['dimension'];
+			$array[$cnt]->codigo = $r['codigo'];
+			$array[$cnt]->numero = $r['numero'];
+            $array[$cnt]->fecha_elaboracion = $r['fecha_elaboracion'];
+			$array[$cnt]->status = $r['status'];
 			$cnt++;
 		}
 		return $array;*/
@@ -48,20 +48,21 @@ class LoteData { // nombre de tabla seguido de la palabra Data
 
 	public static function getById($id){
 
-		/*$sql = "SELECT * FROM lot WHERE id= $id ";
+		/*$sql = "SELECT * FROM lote WHERE id= $id ";
 
 		$query = Executor::doit($sql);
 
 		$found = null;
 
-		$data = new LotData(); // aqui cambia
+		$data = new loteData(); // aqui cambia
 
 		while($r = $query[0]->fetch_array()){
 
 			$data->id = $r['id'];
-			$data->name = $r['name'];
-			$data->num_lot = $r['num_lot'];
-			$data->dimension = $r['dimension'];
+			$data->codigo = $r['codigo'];
+			$data->numero = $r['numero'];
+			$data->fecha_elaboracion = $r['fecha_elaboracion'];
+			$data->status = $r['status'];
 			$found = $data;
 			break;
 
@@ -72,7 +73,7 @@ class LoteData { // nombre de tabla seguido de la palabra Data
 
 	public function update(){
 		
-	/*	$sql = "UPDATE lot SET name = \"$this->name\" , num_lot = \"$this->num_lot\" , dimension = \"$this->dimension\" WHERE id = $this->id";
+	/*	$sql = "UPDATE lote SET codigo = \"$this->codigo\" , numero = \"$this->numero\" , fecha_elaboracion = \"$this->fecha_elaboracion\" WHERE id = $this->id";
 	
 		Executor::doit($sql);*/
 	}
@@ -85,26 +86,7 @@ class LoteData { // nombre de tabla seguido de la palabra Data
 		Executor::doit($sql);*/
 	}
 
-	public static function getAllName(){
-			$sql = "SELECT * FROM lote WHERE status = 1";
-	
-	
-			$query = Executor::doit($sql);
-	
-			$array = array();
-			$cnt = 0;
-			while($r = $query[0]->fetch_array()){
-				//esto cambia
-				$array[$cnt] = new LoteData();	// aqui cambia
-				//CAMBIA PERO ACORDE A LA ESTRUCTURA DEL CONTRUCTOR
-				$array[$cnt]->id = $r['id'];
-				$array[$cnt]->numero = $r['numero'];
 
-				$cnt++;
-			}
-			return $array;
-		}
-	
 
 }
 
