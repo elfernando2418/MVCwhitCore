@@ -28,7 +28,7 @@ class productoData { // nombre de tabla seguido de la palabra Data
 
 	
 	public static function getAll(){
-	/*	$sql = "SELECT * FROM producto WHERE status = 1";
+		$sql = "SELECT * FROM producto WHERE status = 1";
 
 
 		$query = Executor::doit($sql);
@@ -50,7 +50,7 @@ class productoData { // nombre de tabla seguido de la palabra Data
 			$array[$cnt]->status = $r['status'];
 			$cnt++;
 		}
-		return $array;*/
+		return $array;
 	}
 
 

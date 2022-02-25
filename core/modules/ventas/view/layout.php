@@ -75,7 +75,7 @@
                     <span>Producto</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link"  href="index.php?view=lote_view">  
+                <a class="nav-link"  href="index.php?view=controlCalidad_view">  
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Control Calidad</span></a>
             </li>
