@@ -16,9 +16,9 @@ class productoData { // nombre de tabla seguido de la palabra Data
 
 	public function add(){
 
-	/*	$sql = "INSERT INTO producto (prod_cod, prod_nom, prod_cali, prod_grado, prod_peso, num_lote, fecha_in, condicion) ";
+	/*	$sql = "INSERT INTO producto (nombre, calibre, grado_brix, peso, id_lote, fecha_ingreso, fecha_caducidad, status) ";
 
-        $sql .= "value (\"$this->prod_cod\",\"$this->prod_nom\",\"$this->prod_cali\",\"$this->prod_grado\",\"$this->prod_peso\",\"$this->num_lote\",\"$this->fecha_in\",\$this->condicion , 1)";
+        $sql .= "value (\"$this->nombre\",\"$this->calibre\",\"$this->grado_brix\",\"$this->peso\",\"$this->id_lote\",\"$this->fecha_ingreso\",\"$this->fecha_caducidad\" , 1)";
 
 		Executor::doit($sql);*/
 
@@ -28,7 +28,7 @@ class productoData { // nombre de tabla seguido de la palabra Data
 
 	
 	public static function getAll(){
-	/*	$sql = "SELECT * FROM producto WHERE condicion = 1";
+	/*	$sql = "SELECT * FROM producto WHERE status = 1";
 
 
 		$query = Executor::doit($sql);
@@ -40,14 +40,14 @@ class productoData { // nombre de tabla seguido de la palabra Data
 			$array[$cnt] = new productoData();	// aqui cambia
 			//CAMBIA PERO ACORDE A LA ESTRUCTURA DEL CONTRUCTOR
 			$array[$cnt]->id = $r['id'];
-			$array[$cnt]->prod_cod = $r['prod_cod'];
-			$array[$cnt]->prod_nom = $r['prod_nom'];
-            $array[$cnt]->prod_cali = $r['prod_cali'];
-			$array[$cnt]->prod_grado = $r['prod_grado'];
-            $array[$cnt]->prod_peso = $r['prod_peso'];
-			$array[$cnt]->num_lote = $r['num_lote'];
-            $array[$cnt]->fecha_in = $r['fecha_in'];
-			$array[$cnt]->condicion = $r['condicion'];
+			$array[$cnt]->nombre = $r['nombre'];
+			$array[$cnt]->calibre = $r['calibre'];
+            $array[$cnt]->grado_brix = $r['grado_brix'];
+			$array[$cnt]->peso = $r['peso'];
+            $array[$cnt]->id_lote = $r['id_lote'];
+			$array[$cnt]->fecha_ingreso = $r['fecha_ingreso'];
+            $array[$cnt]->fecha_caducidad = $r['fecha_caducidad'];
+			$array[$cnt]->status = $r['status'];
 			$cnt++;
 		}
 		return $array;*/
@@ -67,14 +67,14 @@ class productoData { // nombre de tabla seguido de la palabra Data
 		while($r = $query[0]->fetch_array()){
 
 			$data->id = $r['id'];
-			$data->prod_cod = $r['prod_cod'];
-			$data->prod_nom = $r['prod_nom'];
-			$data->prod_cali = $r['prod_cali'];
-            $data->prod_grado = $r['prod_grado'];
-			$data->prod_peso = $r['prod_peso'];
-            $data->num_lote = $r['num_lote'];
-			$data->fecha_in = $r['fecha_in'];
-			$data->condicion = $r['condicion'];
+			$data->nombre = $r['nombre'];
+			$data->calibre = $r['calibre'];
+			$data->grado_brix = $r['grado_brix'];
+            $data->peso = $r['peso'];
+			$data->id_lote = $r['id_lote'];
+            $data->fecha_ingreso = $r['fecha_ingreso'];
+			$data->fecha_caducidad = $r['fecha_caducidad'];
+			$data->status = $r['status'];
 			$found = $data;
 			break;
 
@@ -85,7 +85,7 @@ class productoData { // nombre de tabla seguido de la palabra Data
 
 	public function update(){
 		
-	/*	$sql = "UPDATE producto SET prod_cod = \"$this->prod_cod\" , prod_nom = \"$this->prod_nom\" , prod_cali = \"$this->prod_cali\" , prod_grado = \"$this->prod_grado\" , prod_peso = \"$this->prod_peso\" , num_lote = \"$this->num_lote\" , fecha_in = \"$this->fecha_in\" , condicion = \"$this->condicion\" WHERE id = $this->id";
+	/*	$sql = "UPDATE producto SET nombre = \"$this->nombre\" , calibre = \"$this->calibre\" , grado_brix = \"$this->grado_brix\" , peso = \"$this->peso\" , id_lote = \"$this->id_lote\" , fecha_ingreso = \"$this->fecha_ingreso\" , fecha_caducidad = \"$this->fecha_caducidad\" WHERE id = $this->id";
 	
 		Executor::doit($sql);*/
 	}
@@ -93,10 +93,10 @@ class productoData { // nombre de tabla seguido de la palabra Data
 
 	public function delete(){
 		
-	/*	$sql = "U ->id";
-	
-		Executor::doit($sql);*/
+
 	}
+
+
 	public static function getByTipo($idLote){
 		$sql = "SELECT * FROM producto WHERE status = 1 AND  id_lote = $idLote ";
 
@@ -114,13 +114,11 @@ class productoData { // nombre de tabla seguido de la palabra Data
 			$array[$cnt]->id_lote = $r['id_lote'];
 			$array[$cnt]->fecha_ingreso = $r['fecha_ingreso'];
 			$array[$cnt]->fecha_caducidad = $r['fecha_caducidad'];
-  
 			$cnt++;
 		}
 		return $array;
 	}
-
-	
+ 
 
 }
 
