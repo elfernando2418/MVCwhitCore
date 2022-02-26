@@ -13,11 +13,11 @@ class usuarioData { // nombre de tabla seguido de la palabra Data
 
 	public function add(){
 
-	/*	$sql = "INSERT INTO usuario (nombre, fecha_ingreso, telefono, email, status) ";
+		$sql = "INSERT INTO usuario (nombre, fecha_ingreso, telefono, email, status) ";
 
         $sql .= "value (\"$this->nombre\",\"$this->fecha_ingreso\",\"$this->telefono\",\"$this->email\", 1)";
 
-		Executor::doit($sql);*/
+		Executor::doit($sql);
 
 	}
 
@@ -25,7 +25,7 @@ class usuarioData { // nombre de tabla seguido de la palabra Data
 
 	
 	public static function getAll(){
-	/*	$sql = "SELECT * FROM usuario WHERE status = 1";
+		$sql = "SELECT * FROM usuario WHERE status = 1";
 
 
 		$query = Executor::doit($sql);
@@ -44,13 +44,13 @@ class usuarioData { // nombre de tabla seguido de la palabra Data
 			$array[$cnt]->status = $r['status'];
 			$cnt++;
 		}
-		return $array;*/
+		return $array;
 	}
 
 
 	public static function getById($id){
 
-		/*$sql = "SELECT * FROM usuario WHERE id= $id ";
+		$sql = "SELECT * FROM usuario WHERE id= $id ";
 
 		$query = Executor::doit($sql);
 
@@ -70,15 +70,15 @@ class usuarioData { // nombre de tabla seguido de la palabra Data
 			break;
 
 		}
-		return $found;*/
+		return $found;
 	}
 
 
 	public function update(){
 		
-	/*	$sql = "UPDATE usuario SET nombre = \"$this->nombre\" , fecha_ingreso = \"$this->fecha_ingreso\" , telefono = \"$this->telefono\" , email = \"$this->email\" WHERE id = $this->id";
+		$sql = "UPDATE usuario SET nombre = \"$this->nombre\" , fecha_ingreso = \"$this->fecha_ingreso\" , telefono = \"$this->telefono\" , email = \"$this->email\" WHERE id = $this->id";
 	
-		Executor::doit($sql);*/
+		Executor::doit($sql);
 	}
 
 

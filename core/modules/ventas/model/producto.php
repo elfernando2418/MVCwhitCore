@@ -16,11 +16,11 @@ class productoData { // nombre de tabla seguido de la palabra Data
 
 	public function add(){
 
-	/*	$sql = "INSERT INTO producto (nombre, calibre, grado_brix, peso, id_lote, fecha_ingreso, fecha_caducidad, status) ";
+		$sql = "INSERT INTO producto (nombre, calibre, grado_brix, peso, id_lote, fecha_ingreso, fecha_caducidad, status) ";
 
         $sql .= "value (\"$this->nombre\",\"$this->calibre\",\"$this->grado_brix\",\"$this->peso\",\"$this->id_lote\",\"$this->fecha_ingreso\",\"$this->fecha_caducidad\" , 1)";
 
-		Executor::doit($sql);*/
+		Executor::doit($sql);
 
 	}
 
@@ -85,9 +85,9 @@ class productoData { // nombre de tabla seguido de la palabra Data
 
 	public function update(){
 		
-	/*	$sql = "UPDATE producto SET nombre = \"$this->nombre\" , calibre = \"$this->calibre\" , grado_brix = \"$this->grado_brix\" , peso = \"$this->peso\" , id_lote = \"$this->id_lote\" , fecha_ingreso = \"$this->fecha_ingreso\" , fecha_caducidad = \"$this->fecha_caducidad\" WHERE id = $this->id";
+		$sql = "UPDATE producto SET nombre = \"$this->nombre\" , calibre = \"$this->calibre\" , grado_brix = \"$this->grado_brix\" , peso = \"$this->peso\" , id_lote = \"$this->id_lote\" , fecha_ingreso = \"$this->fecha_ingreso\" , fecha_caducidad = \"$this->fecha_caducidad\" WHERE id = $this->id";
 	
-		Executor::doit($sql);*/
+		Executor::doit($sql);
 	}
 
 

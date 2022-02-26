@@ -29,43 +29,37 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+<?php
+										 foreach($productos as $producto  ){?>
 
-                        <td> aaa </td>
-                        <td> aaa </td>
-                        <td> aaa </td>
-                        <td>
-                            <a href="#" class="btn btn-warning btn-circle btn-sm">
+										<tr>
+											<td>  <?php  echo  $producto->nombre;    ?></td>
+											<td>  <?php echo  $producto->calibre;    ?></td>
+											<td>  <?php echo  $producto->grado_brix;    ?></td>
+											<td>  <?php echo  $producto->peso;    ?></td>
+                                            <td>  <?php  echo  $producto->id_lote;    ?></td>
+											<td>  <?php echo  $producto->fecha_ingreso;    ?></td>
+											<td>  <?php echo  $producto->fecha_caducidad;    ?></td>
+											<td>  <?php echo  $producto->status;    ?></td>
+											<td> 
+<!-- 
+                                            <a href="#" class="btn btn-warning btn-circle btn-sm">
                                 <i class="fas fa-pen"></i>
                             </a>
                             <a href="#" class="btn btn-danger btn-circle btn-sm">
                                 <i class="fas fa-trash"></i>
                             </a>
                             
-                        </td>
-                    </tr>
 
-                    <!-- <?php
-										// foreach($productos as $producto  ){?>
-
-										<tr>
-											<td>  <?php // echo  $producto->nombre;    ?></td>
-											<td>  <?php// echo  $producto->calibre;    ?></td>
-											<td>  <?php// echo  $producto->grado_brix;    ?></td>
-											<td>  <?php //echo  $producto->peso;    ?></td>
-                                            <td>  <?php // echo  $producto->id_lote;    ?></td>
-											<td>  <?php// echo  $producto->fecha_ingreso;    ?></td>
-											<td>  <?php// echo  $producto->fecha_caducidad;    ?></td>
-											<td>  <?php //echo  $producto->status;    ?></td>
-											<td> 
-												<a href="index.php?view=editProducto_view&amp;id=<?php echo $producto->id ?>">EDITAR</a>
+                                         -->
+												<a href="index.php?view=AQUI VA EL LINK&amp;id=<?php echo $producto->id ?>">EDITAR</a>
 											</td>
 										</tr>
 
 										<?php
-								//		}
+										}
 
-									?> -->
+									?> 
 
 
                 </tbody>

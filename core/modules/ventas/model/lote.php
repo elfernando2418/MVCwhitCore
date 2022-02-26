@@ -12,11 +12,11 @@ class LoteData { // nombre de tabla seguido de la palabra Data
 
 	public function add(){
 
-	/*	$sql = "INSERT INTO lote (codigo, numero, fecha_elaboracion, status) ";
+		$sql = "INSERT INTO lote (codigo, numero, fecha_elaboracion, status) ";
 
         $sql .= "value (\"$this->codigo\" ,\"$this->numero\" , $this->fecha_elaboracion , 1)";
 
-		Executor::doit($sql);*/
+		Executor::doit($sql);
 
 	}
 
@@ -24,7 +24,7 @@ class LoteData { // nombre de tabla seguido de la palabra Data
 
 	
 	public static function getAll(){
-	/*	$sql = "SELECT * FROM lote WHERE status = 1";
+		$sql = "SELECT * FROM lote WHERE status = 1";
 
 
 		$query = Executor::doit($sql);
@@ -42,13 +42,13 @@ class LoteData { // nombre de tabla seguido de la palabra Data
 			$array[$cnt]->status = $r['status'];
 			$cnt++;
 		}
-		return $array;*/
+		return $array;
 	}
 
 
 	public static function getById($id){
 
-		/*$sql = "SELECT * FROM lote WHERE id= $id ";
+		$sql = "SELECT * FROM lote WHERE id= $id ";
 
 		$query = Executor::doit($sql);
 
@@ -67,15 +67,15 @@ class LoteData { // nombre de tabla seguido de la palabra Data
 			break;
 
 		}
-		return $found;*/
+		return $found;
 	}
 
 
 	public function update(){
 		
-	/*	$sql = "UPDATE lote SET codigo = \"$this->codigo\" , numero = \"$this->numero\" , fecha_elaboracion = \"$this->fecha_elaboracion\" WHERE id = $this->id";
+	$sql = "UPDATE lote SET codigo = \"$this->codigo\" , numero = \"$this->numero\" , fecha_elaboracion = \"$this->fecha_elaboracion\" WHERE id = $this->id";
 	
-		Executor::doit($sql);*/
+		Executor::doit($sql);
 	}
 
 

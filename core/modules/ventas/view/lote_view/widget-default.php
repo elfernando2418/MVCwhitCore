@@ -1,7 +1,7 @@
 <?php
 	$lotes = LoteData::getAll();
 
-
+    var_dump($lotes);
 ?>
 
 
@@ -25,39 +25,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <?php
+						  foreach($lotes as $lote  ){?>
 
-                        <td> aaa </td>
-                        <td> aaa </td>
-                        <td> aaa </td>
+                    <tr>
+                        <td> <?php  echo  $lote->codigo;    ?> </td>
+                        <td> <?php echo  $lote->numero;    ?> </td>
+                        <td> <?php echo  $lote->fecha_elaboracion;    ?>  </td>
+                        <td> <?php echo  $lote->status;    ?>   </td>
                         <td>
-                            <a href="#" class="btn btn-warning btn-circle btn-sm">
-                                <i class="fas fa-pen"></i>
-                            </a>
-                            <a href="#" class="btn btn-danger btn-circle btn-sm">
-                                <i class="fas fa-trash"></i>
-                            </a>
-                            
+                            <a href="index.php?view=editLote_view&amp;id=<?php echo $lote->id ?>">EDITAR</a>
                         </td>
                     </tr>
 
-                    <!-- <?php
-										// foreach($lotes as $lote  ){?>
+                    <?php
+							 	}
 
-										<tr>
-											<td>  <?php // echo  $lote->codigo;    ?></td>
-											<td>  <?php// echo  $lote->numero;    ?></td>
-											<td>  <?php// echo  $lote->fecha_elaboracion;    ?></td>
-											<td>  <?php //echo  $lote->status;    ?></td>
-											<td> 
-												<a href="index.php?view=editLote_view&amp;id=<?php echo $lote->id ?>">EDITAR</a>
-											</td>
-										</tr>
-
-										<?php
-								//		}
-
-									?> -->
+								?> 
 
 
                 </tbody>

@@ -12,11 +12,11 @@ class materia_primaData { // nombre de tabla seguido de la palabra Data
 
 	public function add(){
 
-	/*	$sql = "INSERT INTO materia_prima (codigo, id_tipo_mateira, cantidad, status) ";
+		$sql = "INSERT INTO materia_prima (codigo, id_tipo_mateira, cantidad, status) ";
 
         $sql .= "value (\"$this->codigo\" ,\"$this->id_tipo_mateira\" , \"$this->cantidad\", 1)";
 
-		Executor::doit($sql);*/
+		Executor::doit($sql);
 
 	}
 
@@ -24,7 +24,7 @@ class materia_primaData { // nombre de tabla seguido de la palabra Data
 
 	
 	public static function getAll(){
-	/*	$sql = "SELECT * FROM materia_prima WHERE status = 1";
+		$sql = "SELECT * FROM materia_prima WHERE status = 1";
 
 
 		$query = Executor::doit($sql);
@@ -42,13 +42,13 @@ class materia_primaData { // nombre de tabla seguido de la palabra Data
 			$array[$cnt]->status = $r['status'];
 			$cnt++;
 		}
-		return $array;*/
+		return $array;
 	}
 
 
 	public static function getById($id){
 
-		/*$sql = "SELECT * FROM materia_prima WHERE id= $id ";
+		$sql = "SELECT * FROM materia_prima WHERE id= $id ";
 
 		$query = Executor::doit($sql);
 
@@ -67,23 +67,23 @@ class materia_primaData { // nombre de tabla seguido de la palabra Data
 			break;
 
 		}
-		return $found;*/
+		return $found;
 	}
 
 
 	public function update(){
 		
-	/*	$sql = "UPDATE materia_prima SET codigo = \"$this->codigo\" , id_tipo_mateira = \"$this->id_tipo_mateira\" , cantidad = \"$this->cantidad\" WHERE id = $this->id";
+		$sql = "UPDATE materia_prima SET codigo = \"$this->codigo\" , id_tipo_mateira = \"$this->id_tipo_mateira\" , cantidad = \"$this->cantidad\" WHERE id = $this->id";
 	
-		Executor::doit($sql);*/
+		Executor::doit($sql);
 	}
 
 
 	public function delete(){
 		
-	/*	$sql = "U ->id";
+		$sql = "U ->id";
 	
-		Executor::doit($sql);*/
+		Executor::doit($sql);
 	}
 
 }
