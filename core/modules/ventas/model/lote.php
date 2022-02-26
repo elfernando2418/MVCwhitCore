@@ -14,8 +14,9 @@ class LoteData { // nombre de tabla seguido de la palabra Data
 
 		$sql = "INSERT INTO lote (codigo, numero, fecha_elaboracion, status) ";
 
-        $sql .= "value (\"$this->codigo\" ,\"$this->numero\" , $this->fecha_elaboracion , 1)";
+        $sql .= "value (\"$this->codigo\" ,\"$this->numero\" , \"$this->fecha_elaboracion\" , 1)";
 
+		//echo $sql;
 		Executor::doit($sql);
 
 	}

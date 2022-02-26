@@ -1,21 +1,21 @@
 <?php
 
 var_dump( $_POST );
-die();
+
 if(count($_POST)>0){
 
-   // $lote = new LotData();
+    $lote = new loteData();
 
-   // $lote->name = $_POST["name"];
-	//$lote->num_lot = $_POST["num_lot"];
-	//$lote->dimension = $_POST["dimension"];
+    $lote->codigo = $_POST["codigo"];
+	$lote->numero = $_POST["numero"];
+	$lote->fecha_elaboracion = $_POST["fecha_elaboracion"];
+ 
 
-	//$lote->add();
-
+	$lote->add();
+//	die();
 
 }
-
-
+ 
 print "<script>window.location='index.php?view=lote_view';</script>";
  
 

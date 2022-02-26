@@ -11,6 +11,7 @@ class envio_productoData { // nombre de tabla seguido de la palabra Data
 		$this->placa = "";
 		$this->numero_envio = "";
 		$this->remitente = "";
+		$this->destinatario = "";
 		$this->id_producto = "";
 		$this->peso = "";
 		$this->id_estadoProducto = "";
@@ -18,12 +19,14 @@ class envio_productoData { // nombre de tabla seguido de la palabra Data
 	}
 
 	public function add(){
+		
+		 
+		$sql = "INSERT INTO envio_producto (codigo_ruta, fecha_transporte, empresa_transporte, nombre_conductor, placa, numero_envio, remitente, destinatario, id_producto, peso, id_estadoProducto) ";
 
-	/*	$sql = "INSERT INTO lot (name, num_lot, dimension, condicion) ";
+        $sql .= "VALUE (\"$this->codigo_ruta\",\"$this->fecha_transporte\",\"$this->empresa_transporte\",\"$this->nombre_conductor\",\"$this->placa\",\"$this->numero_envio\",\"$this->remitente\",\"$this->destinatario\",\"$this->id_producto\",\"$this->peso\",\"$this->id_estadoProducto\",1)";
 
-        $sql .= "value (\"$this->name\" ,\"$this->num_lot\" , $this->dimension , 1)";
-
-		Executor::doit($sql);*/
+		echo $sql;
+		Executor::doit($sql);
 
 	}
 
@@ -50,6 +53,7 @@ class envio_productoData { // nombre de tabla seguido de la palabra Data
 			$array[$cnt]->placa = $r['placa'];
 			$array[$cnt]->numero_envio = $r['numero_envio'];
 			$array[$cnt]->remitente = $r['remitente'];
+			$array[$cnt]->destinatario = $r['destinatario'];
 			$array[$cnt]->id_producto = $r['id_producto'];
 			$array[$cnt]->peso = $r['peso'];
 			$array[$cnt]->id_estadoProducto = $r['id_estadoProducto'];

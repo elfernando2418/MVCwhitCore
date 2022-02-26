@@ -16,33 +16,36 @@
         
         <div class="col-md-12 mt-1">
             <label for="fom_data" class="form-label">codigo_ruta</label>
-            <input type="text" class="form-control" id="codigo_ruta">
+            <input name="codigo_ruta" type="text" class="form-control" id="codigo_ruta">
         </div>
         <div class="col-md-12 mt-1">
             <label for="fom_data" class="form-label">fecha_transporte</label>
-            <input type="date" class="form-control" id="fecha_transporte">
+            <input name="fecha_transporte" type="date" class="form-control" id="fecha_transporte">
         </div>
         <div class="col-md-12 mt-1">
             <label for="fom_data" class="form-label">empresa_transporte</label>
-            <input type="text" class="form-control" id="empresa_transporte">
+            <input name="empresa_transporte" type="text" class="form-control" id="empresa_transporte">
         </div>
         <div class="col-md-12 mt-1">
             <label for="fom_data" class="form-label">nombre_conductor</label>
-            <input type="text" class="form-control" id="nombre_conductor">
+            <input name="nombre_conductor" type="text" class="form-control" id="nombre_conductor">
         </div>
         <div class="col-md-12 mt-1">
             <label for="fom_data" class="form-label">placa</label>
-            <input type="text" class="form-control" id="placa">
+            <input name="placa" type="text" class="form-control" id="placa">
         </div>
         <div class="col-md-12 mt-1">
             <label for="fom_data" class="form-label">numero_envio</label>
-            <input type="number" class="form-control" id="numero_envio">
+            <input name="numero_envio" type="number" class="form-control" id="numero_envio">
         </div>
         <div class="col-md-12 mt-1">
             <label for="fom_data" class="form-label">remitente</label>
-            <input type="text" class="form-control" id="remitente">
+            <input name="remitente" type="text" class="form-control" id="remitente">
         </div>
-
+        <div class="col-md-12 mt-1">
+            <label for="fom_data" class="form-label">destinatario</label>
+            <input name="destinatario" type="text" class="form-control" id="destinatario">
+        </div>
 
 
 
@@ -70,7 +73,7 @@
 
         <div class="col-md-12 mt-1">
             <label for="fom_data" class="form-label">peso</label>
-            <input type="number" class="form-control" id="peso">
+            <input name="peso" type="number" class="form-control" id="peso">
         </div>
 
 
