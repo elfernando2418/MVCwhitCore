@@ -12,7 +12,7 @@
   
   ?>
   <div class="col-md-12 mb-2">
-    <a href="index.php" class="btn btn-dark btn-circle btn-sm">
+    <a href="index.php?view=lote_view" class="btn btn-dark btn-circle btn-sm">
         <i class="fas fa-angle-left"></i>
     </a>
     <h1>Editar Lote</h1>
