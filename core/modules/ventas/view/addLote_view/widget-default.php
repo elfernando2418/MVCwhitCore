@@ -10,15 +10,15 @@
 
         <div class="col-md-12 mt-1">
             <label for="codigo" class="form-label">Codigo</label>
-            <input  name="codigo" type="text" class="form-control" id="codigo">
+            <input name="codigo" type="text" class="form-control" id="codigo">
         </div>
         <div class="col-md-12 mt-1">
             <label for="numero" class="form-label">Numero de lote</label>
-            <input  name="numero" type="number" class="form-control" id="numero">
+            <input name="numero" type="number" class="form-control" id="numero">
         </div>
         <div class="col-md-12 mt-1">
             <label for="fecha_elaboracion" class="form-label">Fecha Elaboracion</label>
-            <input   name="fecha_elaboracion" type="date" class="form-control" id="fecha_elaboracion">
+            <input name="fecha_elaboracion" type="date" class="form-control" id="fecha_elaboracion">
         </div>
 
 

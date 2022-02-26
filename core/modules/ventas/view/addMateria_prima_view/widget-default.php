@@ -10,15 +10,15 @@
 
         <div class="col-md-12 mt-1">
             <label for="codigo" class="form-label">Codigo</label>
-            <input type="text" class="form-control" id="codigo">
+            <input name="codigo" type="text" class="form-control" id="codigo">
         </div>
         <div class="col-md-12 mt-1">
             <label for="id_tipo_mateira" class="form-label">Tipo de Materia</label>
-            <input type="text" class="form-control" id="id_tipo_mateira">
+            <input name="id_tipo_mateira" type="text" class="form-control" id="id_tipo_mateira">
         </div>
         <div class="col-md-12 mt-1">
             <label for="cantidad" class="form-label">Cantidad</label>
-            <input type="number" class="form-control" id="cantidad">
+            <input name="cantidad" type="number" class="form-control" id="cantidad">
         </div>
 
 

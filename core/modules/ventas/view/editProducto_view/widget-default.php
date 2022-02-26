@@ -23,31 +23,31 @@
 
         <div class="col-md-12 mt-1">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" value="<?php echo $producto->nombre  ?>">
+            <input name="nombre" type="text" class="form-control" id="nombre" value="<?php echo $producto->nombre  ?>">
         </div>
         <div class="col-md-12 mt-1">
             <label for="calibre" class="form-label">Calibre</label>
-            <input type="text" class="form-control" id="calibre" value="<?php echo $producto->calibre  ?>">
+            <input name="calibre" type="text" class="form-control" id="calibre" value="<?php echo $producto->calibre  ?>">
         </div>
         <div class="col-md-12 mt-1">
             <label for="grado_brix" class="form-label">Grado Brix</label>
-            <input type="text" class="form-control" id="grado_brix" value="<?php echo $producto->grado_brix  ?>">
+            <input name="grado_brix" type="text" class="form-control" id="grado_brix" value="<?php echo $producto->grado_brix  ?>">
         </div>
         <div class="col-md-12 mt-1">
             <label for="peso" class="form-label">Peso</label>
-            <input type="text" class="form-control" id="peso" value="<?php echo $producto->peso  ?>">
+            <input name="peso" type="text" class="form-control" id="peso" value="<?php echo $producto->peso  ?>">
         </div>
         <div class="col-md-12 mt-1">
             <label for="id_lote" class="form-label">ID del Lote</label>
-            <input type="number" class="form-control" id="id_lote" value="<?php echo $producto->id_lote  ?>">
+            <input name="id_lote" type="number" class="form-control" id="id_lote" value="<?php echo $producto->id_lote  ?>">
         </div>
         <div class="col-md-12 mt-1">
             <label for="fecha_ingreso" class="form-label">Fecha de Ingreso</label>
-            <input type="date" class="form-control" id="fecha_ingreso" value="<?php echo $producto->fecha_ingreso  ?>">
+            <input name="fecha_ingreso" type="date" class="form-control" id="fecha_ingreso" value="<?php echo $producto->fecha_ingreso  ?>">
         </div>
         <div class="col-md-12 mt-1">
             <label for="fecha_caducidad" class="form-label">Fecha de Caducidad</label>
-            <input type="date" class="form-control" id="fecha_caducidad" value="<?php echo $producto->fecha_caducidad  ?>">
+            <input name="fecha_caducidad" type="date" class="form-control" id="fecha_caducidad" value="<?php echo $producto->fecha_caducidad  ?>">
         </div>
 
 
