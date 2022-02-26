@@ -26,26 +26,39 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                     <?php
 										foreach($materias as $materia  ){?>
 
-										<tr>
-											<td>  <?php echo  $materia->codigo;    ?></td>
-											<td>  <?php echo  $materia->id_tipo_mateira;    ?></td>
-											<td>  <?php echo  $materia->cantidad;    ?></td>
-											<td>
-                                                 <a href="index.php?view=editMateria_prima_view&amp;id=<?php echo $materia->id ?>" class="btn btn-warning btn-circle btn-sm">
-                                                     <i class="fas fa-pen"></i>
-                                                 </a>
-                                                 <a href="#" class="btn btn-danger btn-circle btn-sm">
-                                                     <i class="fas fa-trash"></i>
-                                                 </a>                           
-                                            </td>
-											
-										</tr>
+                    <tr>
+                        <td> <?php echo  $materia->codigo;    ?></td>
+                        
+                        <td> <?php
+                        
+                        if($materia->id_tipo_mateira == 1 ){
+                            echo "Hijuelos";
+                        }else{
+                            echo "Abono";   
 
-										<?php
+                        }
+                        
+                        ?></td>
+
+
+                        <td> <?php echo  $materia->cantidad;    ?></td>
+                        <td>
+                            <a href="index.php?view=editMateria_prima_view&amp;id=<?php echo $materia->id ?>"
+                                class="btn btn-warning btn-circle btn-sm">
+                                <i class="fas fa-pen"></i>
+                            </a>
+                            <a href="index.php?view=deleteMateria_Prima_controller&amp;id=<?php echo $materia->id ?>"
+                                class="btn btn-danger btn-circle btn-sm">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <?php
 										}
 
 									?>

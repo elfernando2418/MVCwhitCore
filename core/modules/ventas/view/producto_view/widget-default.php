@@ -1,7 +1,8 @@
 <?php
 	$productos = productoData::getAll();
 
-
+    $lotes = loteData::getAll( );
+ 
 ?>
 
 <h1>Producto</h1>
@@ -22,7 +23,7 @@
                         <th>Calibre</th>
                         <th>Grado Brix</th>
                         <th>Peso</th>
-                        <th>ID del Lote</th>
+                        <th>Número de Lote</th>
                         <th>Fecha de Ingreso</th>
                         <th>Fecha de Caducidad</th>
                         <th>Acciones</th>
@@ -38,7 +39,15 @@
 											<td>  <?php echo  $producto->calibre;    ?></td>
 											<td>  <?php echo  $producto->grado_brix;    ?></td>
 											<td>  <?php echo  $producto->peso;    ?></td>
-                                            <td>  <?php echo  $producto->id_lote;    ?></td>
+                                            <td>  <?php
+                                            
+                                            foreach($lotes as $lote  ){
+                                                    if( $lote->id === $producto->id_lote ){
+                                                        echo $lote->numero;
+                                                    }
+                                            }        
+                                            
+                                            ?></td>
 											<td>  <?php echo  $producto->fecha_ingreso;    ?></td>
 											<td>  <?php echo  $producto->fecha_caducidad;    ?></td> 
                                             <td>

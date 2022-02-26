@@ -1,3 +1,10 @@
+<?php
+
+
+$lotes = loteData::getAll( );
+ 
+?>
+
 <div class="col-md-12 mb-2">
     <a href="index.php?view=producto_view" class="btn btn-dark btn-circle btn-sm">
         <i class="fas fa-angle-left"></i>
@@ -24,14 +31,40 @@
             <label for="peso" class="form-label">Peso</label>
             <input name="peso" type="text" class="form-control" id="peso">
         </div>
+
+
+
         <div class="col-md-12 mt-1">
-            <label for="id_lote" class="form-label">ID del Lote</label>
-            <input name="id_lote" type="number" class="form-control" id="id_lote">
+            <label for="dimension" class="form-label">Seleccione número de Lote</label>
+            <div class="form-select" aria-label="Default select example">
+                <select name="id_lote" id="id_lote" class="form-control">
+                    <option selected>Ninguna Opcion Seleccionada</option>
+
+                    <?php  foreach($lotes as $lote){
+                        ?>
+
+                    <option value="<?php  echo $lote->id;   ?>">
+
+                        <?php  echo $lote->numero;?>
+                    </option>
+
+
+                    <?php }?>
+                </select>
+            </div>
         </div>
+
+
+
+
+
+
         <div class="col-md-12 mt-1">
             <label for="fecha_ingreso" class="form-label">Fecha de Ingreso</label>
-            <input name="fecha_ingreso" type="date" class="form-control" id="fecha_ingreso">
+            <input onchange="fechaCaduca()" name="fecha_ingreso" type="date" class="form-control" id="fecha_ingreso">
         </div>
+
+
         <div class="col-md-12 mt-1">
             <label for="fecha_caducidad" class="form-label">Fecha de Caducidad</label>
             <input name="fecha_caducidad" type="date" class="form-control" id="fecha_caducidad">
@@ -40,28 +73,6 @@
 
 
 
-        <div class="col-md-12 mt-1">
-            <label for="dimension" class="form-label">Dimension</label>
-            <div class="form-select" aria-label="Default select example">
-                <select name="selectTipo" id="selectTipo" class="form-control">
-                    <option selected>Ninguna Opcion Seleccionada</option>
-
-                    <option value="1">Opcion 1</option>
-                    <option value="2">Opcion 2</option>
-                    <!-- <?php //foreach($users as $user){
-                        ?>
-
-                    <option 
-                    value="<?php  // echo $user->id;   ?>">
-
-                    <?php// echo $user->name;?>
-                    </option>
-
-
-                    <?php// }?> -->
-                </select>
-            </div>
-        </div>
 
         <div class="col-12 mt-4">
             <button type="submit" class="btn btn-primary">Agregar Producto</button>
@@ -69,3 +80,45 @@
 
     </div>
 </form>
+
+<script>
+
+sumaFecha = function(d, fecha) {
+    var Fecha = new Date();
+    var sFecha = fecha || (Fecha.getDate() + "/" + (Fecha.getMonth() + 1) + "/" + Fecha.getFullYear());
+    var sep = sFecha.indexOf('/') != -1 ? '/' : '-';
+    var aFecha = sFecha.split(sep);
+    var fecha = aFecha[2] + '/' + aFecha[1] + '/' + aFecha[0];
+    fecha = new Date(fecha);
+    fecha.setDate(fecha.getDate() + parseInt(d));
+    var anno = fecha.getFullYear();
+    var mes = fecha.getMonth() + 1;
+    var dia = fecha.getDate();
+    mes = (mes < 10) ? ("0" + mes) : mes;
+    dia = (dia < 10) ? ("0" + dia) : dia;
+    var fechaFinal = dia + sep + mes + sep + anno;
+    return (fechaFinal);
+}
+
+function formatDate(input) {
+    var datePart = input.match(/\d+/g),
+        year = datePart[0].substring(2), // get only two digits
+        month = datePart[1],
+        day = datePart[2];
+
+    return day + '/' + month + '/' + year;
+}
+
+
+
+function fechaCaduca() {
+    let fechaInicio = document.getElementById("fecha_ingreso").value;
+    let fechaFi =  formatDate(fechaInicio);
+    console.log(fechaFi )
+  //  var fecha = sumaFecha(8,);
+  //  alert(fecha);
+
+}
+
+
+</script>

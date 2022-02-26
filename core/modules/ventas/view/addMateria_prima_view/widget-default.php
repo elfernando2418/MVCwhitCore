@@ -12,10 +12,24 @@
             <label for="codigo" class="form-label">Codigo</label>
             <input name="codigo" type="text" class="form-control" id="codigo">
         </div>
+
+
+
         <div class="col-md-12 mt-1">
-            <label for="id_tipo_mateira" class="form-label">Tipo de Materia</label>
-            <input name="id_tipo_mateira" type="text" class="form-control" id="id_tipo_mateira">
+            <label for="dimension" class="form-label">Tipo Materia Prima</label>
+            <div class="form-select" aria-label="Default select example">
+                <select name="id_tipo_mateira" id="id_tipo_mateira" class="form-control">
+                    <option selected>Ninguna Opcion Seleccionada</option>
+
+                    <option value="1">Hijuelos</option>
+                    <option value="2">Abono</option>
+                   
+                </select>
+            </div>
         </div>
+
+        
+
         <div class="col-md-12 mt-1">
             <label for="cantidad" class="form-label">Cantidad</label>
             <input name="cantidad" type="number" class="form-control" id="cantidad">
@@ -23,29 +37,6 @@
 
 
 
-
-        <div class="col-md-12 mt-1">
-            <label for="dimension" class="form-label">Dimension</label>
-            <div class="form-select" aria-label="Default select example">
-                <select name="selectTipo" id="selectTipo" class="form-control">
-                    <option selected>Ninguna Opcion Seleccionada</option>
-
-                    <option value="1">Opcion 1</option>
-                    <option value="2">Opcion 2</option>
-                    <!-- <?php //foreach($users as $user){
-                        ?>
-
-                    <option 
-                    value="<?php  // echo $user->id;   ?>">
-
-                    <?php// echo $user->name;?>
-                    </option>
-
-
-                    <?php// }?> -->
-                </select>
-            </div>
-        </div>
 
         <div class="col-12 mt-4">
             <button type="submit" class="btn btn-primary">Agregar Materia Prima</button>

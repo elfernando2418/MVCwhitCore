@@ -1,3 +1,6 @@
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
+
   <?php
 
      
@@ -7,8 +10,6 @@
 
   $lote = LoteData::getById( $idLote );
 
-
-  var_dump( $lote );
   
   ?>
   <div class="col-md-12 mb-2">
@@ -18,15 +19,20 @@
     <h1>Editar Lote</h1>
 </div>
 
-<form class="row g-3" method="POST" action="index.php?view=addLote_controlador">
+<form class="row g-3" method="POST"  onsubmit="return validarDatos()"  action="index.php?view=editLote_controller">
     <div class="col-md-12" style="max-width: 500px;">
 
+    <div class="col-md-12 mt-1" style="display:none;">
+            <label for="codigo" class="form-label">id</label>
+            <input name="id" type="text" class="form-control" id="id" value="<?php echo $lote->id  ?>">
+        </div>
+
         <div class="col-md-12 mt-1">
-            <label for="codigo" class="form-label">Codigo</label>
+            <label for="codigo" class="form-label">Código</label>
             <input name="codigo" type="text" class="form-control" id="codigo" value="<?php echo $lote->codigo  ?>">
         </div>
         <div class="col-md-12 mt-1">
-            <label for="numero" class="form-label">Numero de lote</label>
+            <label for="numero" class="form-label">Número de lote</label>
             <input name="numero" type="number" class="form-control" id="numero" value="<?php echo $lote->numero  ?>">
         </div>
         <div class="col-md-12 mt-1">
@@ -37,28 +43,7 @@
 
 
 
-        <div class="col-md-12 mt-1">
-            <label for="dimension" class="form-label">Dimension</label>
-            <div class="form-select" aria-label="Default select example">
-                <select name="selectTipo" id="selectTipo" class="form-control">
-                    <option selected>Ninguna Opcion Seleccionada</option>
-
-                    <option value="1">Opcion 1</option>
-                    <option value="2">Opcion 2</option>
-                    <!-- <?php //foreach($users as $user){
-                        ?>
-
-                    <option 
-                    value="<?php  // echo $user->id;   ?>">
-
-                    <?php// echo $user->name;?>
-                    </option>
-
-
-                    <?php// }?> -->
-                </select>
-            </div>
-        </div>
+      
 
         <div class="col-12 mt-4">
             <button type="submit" class="btn btn-primary">Agregar Lote</button>
@@ -66,3 +51,34 @@
 
     </div>
 </form>
+
+
+
+<script>
+  function validarDatos() {
+
+    let codigo = document.getElementById("codigo").value;
+
+    let numero = document.getElementById("numero").value;
+
+    let fecha_elaboracion = document.getElementById("fecha_elaboracion").value;
+ 
+
+    if (!codigo.trim()) {
+        swal("Debe Ingresar un Código", '', 'warning');
+        return false
+    }
+    if (!numero.trim()) {
+        swal("Debe Ingresar un Número", '', 'warning');
+        return false
+    }
+    if (!fecha_elaboracion.trim()) {
+        swal("Debe Ingresar una fecha Elaboracion", '', 'warning');
+        return false
+    }
+
+    console.log('here')
+    return true;
+  }
+
+</script>

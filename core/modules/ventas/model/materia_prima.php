@@ -74,14 +74,13 @@ class materia_primaData { // nombre de tabla seguido de la palabra Data
 	public function update(){
 		
 		$sql = "UPDATE materia_prima SET codigo = \"$this->codigo\" , id_tipo_mateira = \"$this->id_tipo_mateira\" , cantidad = \"$this->cantidad\" WHERE id = $this->id";
-	
 		Executor::doit($sql);
 	}
 
 
-	public function delete(){
+	public function delete($id){
 		
-		$sql = "U ->id";
+		$sql = "UPDATE materia_prima SET status = 0 WHERE id = $id";
 	
 		Executor::doit($sql);
 	}

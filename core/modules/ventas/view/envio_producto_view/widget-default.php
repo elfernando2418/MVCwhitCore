@@ -30,6 +30,7 @@
                         <th>Nombre del Producto</th>
                         <th>Peso</th>
                         <th>Estado</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,11 +45,12 @@
                         <td> <?php  echo  $ruta->placa;    ?></td>
                         <td> <?php  echo  $ruta->numero_envio;    ?></td>
                         <td> <?php  echo  $ruta->remitente;    ?></td>
+                        <td> <?php  echo  $ruta->destinatario;    ?></td>
                         <td> <?php  echo  $ruta->id_producto;    ?></td>
                         <td> <?php  echo  $ruta->peso;    ?></td>
                         <td> <?php  
 
-                        if($ruta->id_estadoProducto = 1 ){
+                        if($ruta->id_estadoProducto == 1 ){
                             echo "Pendiente" ;  
                         }else{
                             echo "Enviado" ;  

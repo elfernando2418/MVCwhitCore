@@ -1,7 +1,5 @@
 <?php
-
-var_dump( $_POST );
-
+ 
 if(count($_POST)>0){
     $ruta = new envio_productoData();
 
