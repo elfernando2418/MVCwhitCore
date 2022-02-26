@@ -11,34 +11,74 @@
   var_dump( $producto );
   
   ?>
-  
-  <h1>EDIT PRODUCTO</h1>
-  
-  
-  <form method="POST" action="index.php?view=uppdateLote_controlador">
+  <div class="col-md-12 mb-2">
+    <a href="index.php" class="btn btn-dark btn-circle btn-sm">
+        <i class="fas fa-angle-left"></i>
+    </a>
+    <h1>Editar Producto</h1>
+</div>
 
-    <p style="display:none" >Nombre: <input type="text" name="nombre"  value="<?php echo $producto->nombre  ?>"  ></p>
+<form class="row g-3" method="POST" action="index.php?view=addLote_controlador">
+    <div class="col-md-12" style="max-width: 500px;">
+
+        <div class="col-md-12 mt-1">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" value="<?php echo $producto->nombre  ?>">
+        </div>
+        <div class="col-md-12 mt-1">
+            <label for="calibre" class="form-label">Calibre</label>
+            <input type="text" class="form-control" id="calibre" value="<?php echo $producto->calibre  ?>">
+        </div>
+        <div class="col-md-12 mt-1">
+            <label for="grado_brix" class="form-label">Grado Brix</label>
+            <input type="text" class="form-control" id="grado_brix" value="<?php echo $producto->grado_brix  ?>">
+        </div>
+        <div class="col-md-12 mt-1">
+            <label for="peso" class="form-label">Peso</label>
+            <input type="text" class="form-control" id="peso" value="<?php echo $producto->peso  ?>">
+        </div>
+        <div class="col-md-12 mt-1">
+            <label for="id_lote" class="form-label">ID del Lote</label>
+            <input type="number" class="form-control" id="id_lote" value="<?php echo $producto->id_lote  ?>">
+        </div>
+        <div class="col-md-12 mt-1">
+            <label for="fecha_ingreso" class="form-label">Fecha de Ingreso</label>
+            <input type="date" class="form-control" id="fecha_ingreso" value="<?php echo $producto->fecha_ingreso  ?>">
+        </div>
+        <div class="col-md-12 mt-1">
+            <label for="fecha_caducidad" class="form-label">Fecha de Caducidad</label>
+            <input type="date" class="form-control" id="fecha_caducidad" value="<?php echo $producto->fecha_caducidad  ?>">
+        </div>
 
 
-       <p>Calibre: <input type="text" name="calibre"  value="<?php echo $producto->calibre  ?>"  ></p>
 
 
-       <p>Grado Brix: <input type="number" name="grado_brix"  value="<?php echo $producto->grado_brix  ?>"  ></p>
+        <div class="col-md-12 mt-1">
+            <label for="dimension" class="form-label">Dimension</label>
+            <div class="form-select" aria-label="Default select example">
+                <select name="selectTipo" id="selectTipo" class="form-control">
+                    <option selected>Ninguna Opcion Seleccionada</option>
+
+                    <option value="1">Opcion 1</option>
+                    <option value="2">Opcion 2</option>
+                    <!-- <?php //foreach($users as $user){
+                        ?>
+
+                    <option 
+                    value="<?php  // echo $user->id;   ?>">
+
+                    <?php// echo $user->name;?>
+                    </option>
 
 
-       <p>Peso: <input type="text" name="peso"  value="<?php echo $producto->peso  ?>"  ></p>
+                    <?php// }?> -->
+                </select>
+            </div>
+        </div>
 
+        <div class="col-12 mt-4">
+            <button type="submit" class="btn btn-primary">Agregar Producto</button>
+        </div>
 
-       <p>ID del Lote: <input type="number" name="id_lote"  value="<?php echo $producto->id_lote  ?>"  ></p>
-
-
-       <p>Fecha de Ingreso: <input type="date" name="fecha_ingreso"  value="<?php echo $producto->fecha_ingreso  ?>"  ></p>
-
-
-       <p>Fecha de Caducidad: <input type="date" name="fecha_caducidad"  value="<?php echo $producto->fecha_caducidad  ?>"  ></p>
-
-
-       <button type="submit"> ENVIAR </button>
-
-
-   </form>
+    </div>
+</form>
