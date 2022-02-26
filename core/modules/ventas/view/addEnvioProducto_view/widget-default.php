@@ -1,7 +1,7 @@
 <?php
 	$productos = productoData::getAll();
 
-
+	 
 ?>
 <div class="col-md-12 mb-2">
     <a href="index.php" class="btn btn-dark btn-circle btn-sm">
@@ -10,36 +10,36 @@
     <h1>Registro de Producto</h1>
 </div>
 
-<form class="row g-3" method="POST" action="index.php?view=addLote_controlador">
+<form class="row g-3" method="POST" action="index.php?view=addEnvioProducto_controller">
     <div class="col-md-12" style="max-width: 500px;">
 
         
         <div class="col-md-12 mt-1">
-            <label for="codigo_ruta" class="form-label">codigo_ruta</label>
+            <label for="fom_data" class="form-label">codigo_ruta</label>
             <input type="text" class="form-control" id="codigo_ruta">
         </div>
         <div class="col-md-12 mt-1">
-            <label for="fecha_transporte" class="form-label">fecha_transporte</label>
+            <label for="fom_data" class="form-label">fecha_transporte</label>
             <input type="date" class="form-control" id="fecha_transporte">
         </div>
         <div class="col-md-12 mt-1">
-            <label for="empresa_transporte" class="form-label">empresa_transporte</label>
+            <label for="fom_data" class="form-label">empresa_transporte</label>
             <input type="text" class="form-control" id="empresa_transporte">
         </div>
         <div class="col-md-12 mt-1">
-            <label for="nombre_conductor" class="form-label">nombre_conductor</label>
+            <label for="fom_data" class="form-label">nombre_conductor</label>
             <input type="text" class="form-control" id="nombre_conductor">
         </div>
         <div class="col-md-12 mt-1">
-            <label for="placa" class="form-label">placa</label>
+            <label for="fom_data" class="form-label">placa</label>
             <input type="text" class="form-control" id="placa">
         </div>
         <div class="col-md-12 mt-1">
-            <label for="numero_envio" class="form-label">numero_envio</label>
-            <input type="text" class="form-control" id="numero_envio">
+            <label for="fom_data" class="form-label">numero_envio</label>
+            <input type="number" class="form-control" id="numero_envio">
         </div>
         <div class="col-md-12 mt-1">
-            <label for="remitente" class="form-label">remitente</label>
+            <label for="fom_data" class="form-label">remitente</label>
             <input type="text" class="form-control" id="remitente">
         </div>
 
@@ -47,7 +47,7 @@
 
 
         <div class="col-md-12 mt-1">
-            <label for="dimension" class="form-label">Producto</label>
+            <label for="fom_data" class="form-label">Producto</label>
             <div class="form-select" aria-label="Default select example">
                 <select name="id_producto" id="id_producto" class="form-control">
                     <option selected>Ninguna Opcion Seleccionada</option>
@@ -68,26 +68,24 @@
             </div>
         </div>
 
-
-
-
- 
-
-
-
-
-
         <div class="col-md-12 mt-1">
-            <label for="peso" class="form-label">peso</label>
-            <input type="text" class="form-control" id="peso">
+            <label for="fom_data" class="form-label">peso</label>
+            <input type="number" class="form-control" id="peso">
         </div>
+
+
+
+    
         <div class="col-md-12 mt-1">
-            <label for="id_estadoProducto" class="form-label">id_estadoProducto</label>
-            <input type="text" class="form-control" id="id_estadoProducto">
+            <label for="dimension" class="form-label">Estado Producto</label>
+            <div class="form-select" aria-label="Default select example">
+                <select name="id_estadoProducto" id="id_estadoProducto" class="form-control">
+                    <option selected>Ninguna Opcion Seleccionada</option>
+                    <option  value="1">PENDIENTE </option>
+                    <option  value="2">ENVIADO </option>
+                </select>
+            </div>
         </div>
- 
-
-
 
 
 

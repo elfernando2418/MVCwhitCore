@@ -41,14 +41,14 @@
                                             <td>  <?php echo  $producto->id_lote;    ?></td>
 											<td>  <?php echo  $producto->fecha_ingreso;    ?></td>
 											<td>  <?php echo  $producto->fecha_caducidad;    ?></td> 
-
+                                            <td>
                                             <a href="index.php?view=editProducto_view&amp;id=<?php echo $producto->id ?>" class="btn btn-warning btn-circle btn-sm">
                                                   <i class="fas fa-pen"></i>
                                             </a>
                                             <a href="#" class="btn btn-danger btn-circle btn-sm">
                                                   <i class="fas fa-trash"></i>
                                             </a>
-                            
+                                            </td> 
 										</tr>
 
 										<?php
