@@ -6,11 +6,6 @@ if(count($_POST)>0){
 
     $envioProducto = new envio_productoData();
 
-   // $lote->name = $_POST["name"];
-	//$lote->num_lot = $_POST["num_lot"];
-	//$lote->dimension = $_POST["dimension"];
-
-	
  
 	$envioProducto->codigo_ruta = $_POST['codigo_ruta'];
 	$envioProducto->fecha_transporte = $_POST['fecha_transporte'];
@@ -26,9 +21,9 @@ if(count($_POST)>0){
  	$envioProducto->add();
 
 }
-die();
 
-print "<script>window.location='index.php?view=lote_view';</script>";
+
+print "<script>window.location='index.php?view=envio_producto_view';</script>";
  
 
 

@@ -57,7 +57,14 @@
                         
                         ?></td>
                         <td>
-                            <a href="index.php?view=addEnvioProducto_view&amp;id=<?php echo $ruta->id ?>">EDITAR</a>
+                            <a href="index.php?view=editEnvioProducto_view&amp;id=<?php echo $ruta->id ?>"
+                                class="btn btn-warning btn-circle btn-sm">
+                                <i class="fas fa-pen"></i>
+                            </a>
+                            <a href="#" class="btn btn-danger btn-circle btn-sm">
+                                <i class="fas fa-trash"></i>
+                            </a>
+
                         </td>
                     </tr>
 
