@@ -17,17 +17,13 @@
   
   <form method="POST" action="index.php?view=uppdateLote_controlador">
 
-    <p style="display:none" >nombre: <input type="text" name="id"  value="<?php echo $lote->id  ?>"  ></p>
+    <p style="display:none" >Codigo: <input type="text" name="codigo"  value="<?php echo $lote->codigo  ?>"  ></p>
 
 
-       <p>nombre: <input type="text" name="name"  value="<?php echo $lote->name  ?>"  ></p>
+       <p>Numero: <input type="number" name="numero"  value="<?php echo $lote->numero  ?>"  ></p>
 
 
-       <p>num lote: <input type="number" name="num_lot"  value="<?php echo $lote->num_lot  ?>"  ></p>
-
-
-       <p> dimension: <input type="number" name="dimension" value="<?php echo $lote->dimension  ?>"  ></p>
-
+       <p>Fecha Elaboracion: <input type="date" name="fecha_elaboracion"  value="<?php echo $lote->fecha_elaboracion  ?>"  ></p>
 
 
        <button type="submit"> ENVIAR </button>

@@ -1,12 +1,12 @@
 <?php
-	$lotes = LoteData::getAll();
+	$materias = materia_primaData::getAll();
 
 
 ?>
 
 
 
-<a type="button" href="index.php?view=addLote_view" class="btn btn-primary">Agregar producto</a>
+<a type="button" href="index.php?view=addMateria_prima_view" class="btn btn-primary">Agregar Materia Prima</a>
 <br><br>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -19,8 +19,8 @@
                 <thead>
                     <tr>
                         <th>Codigo</th>
-                        <th>Numero</th>
-                        <th>Fecha de Elaboracion</th>
+                        <th>Tipo de Materia</th>
+                        <th>Cantidad</th>
 
                     </tr>
                 </thead>
@@ -42,15 +42,15 @@
                     </tr>
 
                     <!-- <?php
-										// foreach($lotes as $lote  ){?>
+										// foreach($materias as $materia  ){?>
 
 										<tr>
-											<td>  <?php // echo  $lote->codigo;    ?></td>
-											<td>  <?php// echo  $lote->numero;    ?></td>
-											<td>  <?php// echo  $lote->fecha_elaboracion;    ?></td>
-											<td>  <?php //echo  $lote->status;    ?></td>
+											<td>  <?php // echo  $materia->codigo;    ?></td>
+											<td>  <?php// echo  $materia->id_tipo_mateira;    ?></td>
+											<td>  <?php// echo  $materia->cantidad;    ?></td>
+											<td>  <?php //echo  $materia->status;    ?></td>
 											<td> 
-												<a href="index.php?view=editLote_view&amp;id=<?php echo $lote->id ?>">EDITAR</a>
+												<a href="index.php?view=editMateria_prima_view&amp;id=<?php echo $materia->id ?>">EDITAR</a>
 											</td>
 										</tr>
 

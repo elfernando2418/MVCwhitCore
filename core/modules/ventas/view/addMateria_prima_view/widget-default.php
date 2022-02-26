@@ -2,7 +2,7 @@
     <a href="index.php" class="btn btn-dark btn-circle btn-sm">
         <i class="fas fa-angle-left"></i>
     </a>
-    <h1>Registro de Lote</h1>
+    <h1>Registro de Materia Prima</h1>
 </div>
 
 <form class="row g-3" method="POST" action="index.php?view=addLote_controlador">
@@ -13,12 +13,12 @@
             <input type="text" class="form-control" id="codigo">
         </div>
         <div class="col-md-12 mt-1">
-            <label for="numero" class="form-label">Numero de lote</label>
-            <input type="number" class="form-control" id="numero">
+            <label for="id_tipo_mateira" class="form-label">Tipo de Materia</label>
+            <input type="text" class="form-control" id="id_tipo_mateira">
         </div>
         <div class="col-md-12 mt-1">
-            <label for="fecha_elaboracion" class="form-label">Fecha Elaboracion</label>
-            <input type="date" class="form-control" id="fecha_elaboracion">
+            <label for="cantidad" class="form-label">Cantidad</label>
+            <input type="number" class="form-control" id="cantidad">
         </div>
 
 
@@ -59,7 +59,7 @@
 
 
         <div class="col-12 mt-4">
-            <button type="submit" class="btn btn-primary">Agregar Lote</button>
+            <button type="submit" class="btn btn-primary">Agregar Materia Prima</button>
         </div>
 
     </div>
