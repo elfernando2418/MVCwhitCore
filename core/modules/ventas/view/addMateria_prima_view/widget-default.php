@@ -5,7 +5,7 @@
     <h1>Registro de Materia Prima</h1>
 </div>
 
-<form class="row g-3" method="POST" action="index.php?view=addLote_controlador">
+<form class="row g-3" method="POST" action="index.php?view=addMateria_controlador">
     <div class="col-md-12" style="max-width: 500px;">
 
         <div class="col-md-12 mt-1">
