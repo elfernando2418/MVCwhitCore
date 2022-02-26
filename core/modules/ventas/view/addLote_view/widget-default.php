@@ -47,17 +47,6 @@
             </div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
         <div class="col-12 mt-4">
             <button type="submit" class="btn btn-primary">Agregar Lote</button>
         </div>
