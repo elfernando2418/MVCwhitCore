@@ -99,17 +99,17 @@ class envio_productoData { // nombre de tabla seguido de la palabra Data
 
 	public function update(){
 		
-	/*	$sql = "UPDATE lot SET name = \"$this->name\" , num_lot = \"$this->num_lot\" , dimension = \"$this->dimension\" WHERE id = $this->id";
-	
-		Executor::doit($sql);*/
+		$sql = "UPDATE envio_producto SET codigo_ruta = \"$this->codigo_ruta\", fecha_transporte = \"$this->fecha_transporte\", empresa_transporte = \"$this->empresa_transporte\", nombre_conductor = \"$this->nombre_conductor\", placa = \"$this->placa\", numero_envio = \"$this->numero_envio\", remitente = \"$this->remitente\", destinatario = \"$this->destinatario\", id_producto = \"$this->id_producto\",peso = \"$this->peso\", id_estadoProducto = \"$this->id_estadoProducto\" WHERE id = $this->id";
+		
+		Executor::doit($sql);
 	}
 
 
-	public function delete(){
+	public function delete($id){
 		
-	/*	$sql = "U ->id";
-	
-		Executor::doit($sql);*/
+		$sql = "UPDATE envio_producto SET status = 0 WHERE id = $id";
+		echo $sql;
+		Executor::doit($sql);
 	}
 
  

@@ -3,7 +3,9 @@
 var_dump( $_POST );
 
 if(count($_POST)>0){
-    $ruta->id = $_POST['id'];
+    $ruta = new envio_productoData();
+
+    $ruta->id = $_POST['id_ruta'];
     $ruta->codigo_ruta = $_POST['codigo_ruta'];
     $ruta->fecha_transporte = $_POST['fecha_transporte'];
     $ruta->empresa_transporte = $_POST['empresa_transporte'];
@@ -15,14 +17,10 @@ if(count($_POST)>0){
     $ruta->id_producto = $_POST['id_producto'];
     $ruta->peso = $_POST['peso'];
     $ruta->id_estadoProducto = $_POST['id_estadoProducto'];
-    $ruta->
-	
-//	die();
-
+    $ruta->update();
 }
-die();
  
-print "<script>window.location='index.php?view=lote_view';</script>";
+print "<script>window.location='index.php?view=envio_producto_view';</script>";
  
 
 
