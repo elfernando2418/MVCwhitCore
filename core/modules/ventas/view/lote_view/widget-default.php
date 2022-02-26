@@ -1,7 +1,7 @@
 <?php
 	$lotes = LoteData::getAll();
 
-    var_dump($lotes);
+    
 ?>
 
 <h1>Lote</h1>
