@@ -13,13 +13,6 @@
 <form class="row g-3" method="POST" action="index.php?view=addLote_controlador">
     <div class="col-md-12" style="max-width: 500px;">
 
-        <div class="col-md-12 mt-1">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre">
-        </div>
-         
-
- 
         
         <div class="col-md-12 mt-1">
             <label for="codigo_ruta" class="form-label">codigo_ruta</label>
@@ -27,7 +20,7 @@
         </div>
         <div class="col-md-12 mt-1">
             <label for="fecha_transporte" class="form-label">fecha_transporte</label>
-            <input type="text" class="form-control" id="fecha_transporte">
+            <input type="date" class="form-control" id="fecha_transporte">
         </div>
         <div class="col-md-12 mt-1">
             <label for="empresa_transporte" class="form-label">empresa_transporte</label>
