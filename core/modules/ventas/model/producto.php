@@ -56,7 +56,7 @@ class productoData { // nombre de tabla seguido de la palabra Data
 
 	public static function getById($id){
 
-		/*$sql = "SELECT * FROM producto WHERE id= $id ";
+		$sql = "SELECT * FROM producto WHERE id= $id ";
 
 		$query = Executor::doit($sql);
 
@@ -79,7 +79,7 @@ class productoData { // nombre de tabla seguido de la palabra Data
 			break;
 
 		}
-		return $found;*/
+		return $found;
 	}
 
 
@@ -111,6 +111,10 @@ class productoData { // nombre de tabla seguido de la palabra Data
 			//CAMBIA PERO ACORDE A LA ESTRUCTURA DEL CONTRUCTOR
 			$array[$cnt]->id = $r['id'];
 			$array[$cnt]->nombre = $r['nombre'];
+			$array[$cnt]->id_lote = $r['id_lote'];
+			$array[$cnt]->calibre = $r['calibre'];
+			$array[$cnt]->grado_brix = $r['grado_brix'];
+			$array[$cnt]->peso = $r['peso'];
 			$array[$cnt]->id_lote = $r['id_lote'];
 			$array[$cnt]->fecha_ingreso = $r['fecha_ingreso'];
 			$array[$cnt]->fecha_caducidad = $r['fecha_caducidad'];

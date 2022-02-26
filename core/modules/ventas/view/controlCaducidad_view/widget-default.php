@@ -19,7 +19,7 @@
 
 
 
-        <h6 class="m-0 font-weight-bold text-primary">Tabla de Productos</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Control de Caducidad por Lote/Producto</h6>
     </div>
     <div class="card-body">
 

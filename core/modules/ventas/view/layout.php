@@ -65,7 +65,7 @@
                     <span>Lote</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link"  href="index.php?view=lote_view">  
+                <a class="nav-link"  href="index.php?view=materia_prima_view">  
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Materia Prima</span></a>
             </li>
@@ -86,7 +86,7 @@
                     <span>Control Caducidad</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link"  href="index.php?view=lote_view">  
+                <a class="nav-link"  href="index.php?view=envio_producto_view">  
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Rutas</span></a>
             </li>
