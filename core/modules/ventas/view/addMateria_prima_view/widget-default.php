@@ -1,3 +1,5 @@
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <div class="col-md-12 mb-2">
     <a href="index.php?view=materia_prima_view" class="btn btn-dark btn-circle btn-sm">
         <i class="fas fa-angle-left"></i>
@@ -5,7 +7,7 @@
     <h1>Registro de Materia Prima</h1>
 </div>
 
-<form class="row g-3" method="POST" action="index.php?view=addMateria_controlador">
+<form class="row g-3" method="POST" onsubmit="return validarDatos()" action="index.php?view=addMateria_controlador">
     <div class="col-md-12" style="max-width: 500px;">
 
         <div class="col-md-12 mt-1">
@@ -44,3 +46,26 @@
 
     </div>
 </form>
+
+<script>
+  function validarDatos() {
+
+    let codigo = document.getElementById("codigo").value;
+
+    let cantidad = document.getElementById("cantidad").value;
+ 
+
+    if (!codigo.trim()) {
+        swal("Debe Ingresar un Código", '', 'warning');
+        return false
+    }
+    if (!cantidad.trim()) {
+        swal("Debe Ingresar una Cantidad", '', 'warning');
+        return false
+    }
+
+    console.log('here')
+    return true;
+  }
+
+</script>

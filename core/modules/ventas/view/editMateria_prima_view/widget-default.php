@@ -1,3 +1,5 @@
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
+  
   <?php
 
      
@@ -15,7 +17,7 @@
       <h1>Editar Materia Prima</h1>
   </div>
 
-  <form class="row g-3" method="POST" action="index.php?view=editMateriPrima_controller">
+  <form class="row g-3" method="POST" onsubmit="return validarDatos()" action="index.php?view=editMateriPrima_controller">
       <div class="col-md-12" style="max-width: 500px;">
 
 
@@ -79,3 +81,26 @@
 
       </div>
   </form>
+
+  <script>
+  function validarDatos() {
+
+    let codigo = document.getElementById("codigo").value;
+
+    let cantidad = document.getElementById("cantidad").value;
+ 
+
+    if (!codigo.trim()) {
+        swal("Debe Ingresar un Código", '', 'warning');
+        return false
+    }
+    if (!cantidad.trim()) {
+        swal("Debe Ingresar una Cantidad", '', 'warning');
+        return false
+    }
+
+    console.log('here')
+    return true;
+  }
+
+</script>
