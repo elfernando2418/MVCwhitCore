@@ -1,3 +1,5 @@
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <?php
 
 
@@ -12,7 +14,7 @@ $lotes = loteData::getAll( );
     <h1>Registro de Producto</h1>
 </div>
 
-<form class="row g-3" method="POST" action="index.php?view=addProducto_controlador">
+<form class="row g-3" method="POST" onsubmit="return validarDatos()" action="index.php?view=addProducto_controlador">
     <div class="col-md-12" style="max-width: 500px;">
 
         <div class="col-md-12 mt-1">
@@ -120,5 +122,37 @@ function fechaCaduca() {
 
 }
 
+function validarDatos() {
 
+let nombre = document.getElementById("nombre").value;
+let calibre = document.getElementById("calibre").value;
+let grado_brix = document.getElementById("grado_brix").value;
+let peso = document.getElementById("peso").value;
+let fecha_ingreso = document.getElementById("fecha_ingreso").value;
+
+
+if (!nombre.trim()) {
+    swal("Debe Ingresar un Nombre", '', 'warning');
+    return false
+}
+if (!calibre.trim()) {
+    swal("Debe Ingresar un Calibre", '', 'warning');
+    return false
+}
+if (!grado_brix.trim()) {
+    swal("Debe Ingresar un Grado brix", '', 'warning');
+    return false
+}
+if (!peso.trim()) {
+    swal("Debe Ingresar un Peso", '', 'warning');
+    return false
+}
+if (!fecha_ingreso.trim()) {
+    swal("Debe Ingresar una Fecha", '', 'warning');
+    return false
+}
+
+console.log('here')
+return true;
+}
 </script>

@@ -1,3 +1,5 @@
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <?php
 	$productos = productoData::getAll();
 
@@ -10,7 +12,7 @@
     <h1>Registro de Producto</h1>
 </div>
 
-<form class="row g-3" method="POST" action="index.php?view=addEnvioProducto_controller">
+<form class="row g-3" method="POST" onsubmit="return validarDatos()" action="index.php?view=addEnvioProducto_controller">
     <div class="col-md-12" style="max-width: 500px;">
 
         
@@ -100,3 +102,60 @@
 
     </div>
 </form>
+
+<script>
+  function validarDatos() {
+
+    let codigo_ruta = document.getElementById("codigo_ruta").value;
+    let fecha_transporte = document.getElementById("fecha_transporte").value;
+    let empresa_transporte = document.getElementById("empresa_transporte").value;
+    let nombre_conductor = document.getElementById("nombre_conductor").value;
+    let placa = document.getElementById("placa").value;
+    let numero_envio = document.getElementById("numero_envio").value;
+    let remitente = document.getElementById("remitente").value;
+    let destinatario = document.getElementById("destinatario").value;
+    let peso = document.getElementById("peso").value;
+ 
+
+    if (!codigo_ruta.trim()) {
+        swal("Debe Ingresar un Código de Ruta", '', 'warning');
+        return false
+    }
+    if (!fecha_transporte.trim()) {
+        swal("Debe Ingresar una Fecha", '', 'warning');
+        return false
+    }
+    if (!empresa_transporte.trim()) {
+        swal("Debe Ingresar una Empresa", '', 'warning');
+        return false
+    }
+    if (!nombre_conductor.trim()) {
+        swal("Debe Ingresar un Nombre de Conductor", '', 'warning');
+        return false
+    }
+    if (!placa.trim()) {
+        swal("Debe Ingresar una Placa", '', 'warning');
+        return false
+    }
+    if (!numero_envio.trim()) {
+        swal("Debe Ingresar un Numero de Envío", '', 'warning');
+        return false
+    }
+    if (!remitente.trim()) {
+        swal("Debe Ingresar un Remitente", '', 'warning');
+        return false
+    }
+    if (!destinatario.trim()) {
+        swal("Debe Ingresar un Destinatario", '', 'warning');
+        return false
+    }
+    if (!peso.trim()) {
+        swal("Debe Ingresar un Peso", '', 'warning');
+        return false
+    }
+
+    console.log('here')
+    return true;
+  }
+
+</script>
