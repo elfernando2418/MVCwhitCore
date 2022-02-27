@@ -17,7 +17,7 @@
             <label for="dimension" class="form-label">Seleccione Lote</label>
             <div class="form-select" aria-label="Default select example">
                 <select onchange="onSelectTipo()" name="selectTipo" id="selectTipo" class="form-control">
-                    <option selected>Seleccione un lote </option>
+                    <option selected value="0">Seleccione un lote </option>
 
                     <?php foreach($lotes as $lote){
                         ?>
@@ -44,16 +44,19 @@
 <script>
 function onSelectTipo() {
     console.log('CAMBIO ESTO');
-
+    
     let tipo = 'tipo=' + document.getElementById("selectTipo").value;
-    $.ajax({
-            url: 'core/modules/ventas/view/controlCalidad_view/TablaControlCalidad.php',
-            type: 'POST',
-            data: tipo,
-        })
-        .done(function(res) {
-            $('#respuesta').html(res)
-        })
+    
+        $.ajax({
+                url: 'core/modules/ventas/view/controlCalidad_view/TablaControlCalidad.php',
+                type: 'POST',
+                data: tipo,
+            })
+            .done(function(res) {
+                $('#respuesta').html(res)
+            })
+
+     
 
 }
 </script>

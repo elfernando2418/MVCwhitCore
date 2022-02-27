@@ -2,8 +2,10 @@
 include "./../../model/producto.php";
 include "./../../../../controller/Database.php";
 include "./../../../../controller/Executor.php";
-var_dump($_POST['tipo']);
+
 $productos = productoData::getByTipo($_POST['tipo']);
+
+
 ?>
 
 <!-- Calibre 5-10 

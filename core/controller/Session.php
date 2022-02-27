@@ -1,7 +1,7 @@
 <?php
- 
 
 class Session{
+	
 	public static function setUID($uid){
 		$_SESSION['user_id'] = $uid;
 	}

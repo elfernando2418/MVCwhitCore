@@ -8,11 +8,12 @@ class usuarioData { // nombre de tabla seguido de la palabra Data
         $this->fecha_ingreso ="";
         $this->telefono ="";
         $this->email ="";
+		$this->password ="";
 		$this->status =0;
 	}
 
 	public function add(){
-
+		//falta campo password
 		$sql = "INSERT INTO usuario (nombre, fecha_ingreso, telefono, email, status) ";
 
         $sql .= "value (\"$this->nombre\",\"$this->fecha_ingreso\",\"$this->telefono\",\"$this->email\", 1)";
@@ -51,7 +52,7 @@ class usuarioData { // nombre de tabla seguido de la palabra Data
 	public static function getById($id){
 
 		$sql = "SELECT * FROM usuario WHERE id= $id ";
-
+		 
 		$query = Executor::doit($sql);
 
 		$found = null;
@@ -65,7 +66,7 @@ class usuarioData { // nombre de tabla seguido de la palabra Data
 			$data->fecha_ingreso = $r['fecha_ingreso'];
 			$data->telefono = $r['telefono'];
             $data->email = $r['email'];
-			$data->status = $r['status'];
+ 
 			$found = $data;
 			break;
 
@@ -74,6 +75,26 @@ class usuarioData { // nombre de tabla seguido de la palabra Data
 	}
 
 
+	public static function getByemailPassword($email,$password){
+
+		$sql = "SELECT * FROM usuario WHERE usuario.email = \"$email\" AND usuario.password = \"$password\" AND usuario.status = 1";
+
+		$query = Executor::doit($sql);
+
+		$found = null;
+
+		$data = new usuarioData(); // aqui cambia
+
+		while($r = $query[0]->fetch_array()){
+
+			$data->id = $r['id'];
+		 
+			$found = $data;
+			break;
+
+		}
+		return $found;
+	}
 	public function update(){
 		
 		$sql = "UPDATE usuario SET nombre = \"$this->nombre\" , fecha_ingreso = \"$this->fecha_ingreso\" , telefono = \"$this->telefono\" , email = \"$this->email\" WHERE id = $this->id";
