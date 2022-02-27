@@ -21,7 +21,7 @@
             <label for="dimension" class="form-label">Tipo Materia Prima</label>
             <div class="form-select" aria-label="Default select example">
                 <select name="id_tipo_mateira" id="id_tipo_mateira" class="form-control">
-                    <option selected>Ninguna Opcion Seleccionada</option>
+                    <option selected value="">Ninguna Opcion Seleccionada</option>
 
                     <option value="1">Hijuelos</option>
                     <option value="2">Abono</option>
@@ -53,17 +53,21 @@
     let codigo = document.getElementById("codigo").value;
 
     let cantidad = document.getElementById("cantidad").value;
+    let id_tipo_mateira = document.getElementById("id_tipo_mateira").value;
  
 
     if (!codigo.trim()) {
         swal("Debe Ingresar un Código", '', 'warning');
         return false
     }
+    if (!id_tipo_mateira.trim()) {
+        swal("Debe Seleccionar un Tipo Materia Prima", '', 'warning');
+        return false
+    }
     if (!cantidad.trim()) {
         swal("Debe Ingresar una Cantidad", '', 'warning');
         return false
     }
-
     console.log('here')
     return true;
   }

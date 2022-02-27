@@ -19,6 +19,7 @@
             <table class="table table-bordered" id="dataTable" width="95%" cellspacing="0">
                 <thead>
                     <tr>
+                        <th>Código</th>
                         <th>Nombre</th>
                         <th>Calibre</th>
                         <th>Grado Brix</th>
@@ -35,6 +36,7 @@
 					                foreach($productos as $producto  ){?>
 
 										<tr>
+                                        <td>  <?php  echo  $producto->codigoProducto;    ?></td>
 											<td>  <?php  echo  $producto->nombre;    ?></td>
 											<td>  <?php echo  $producto->calibre;    ?></td>
 											<td>  <?php echo  $producto->grado_brix;    ?></td>
@@ -54,7 +56,8 @@
                                             <a href="index.php?view=editProducto_view&amp;id=<?php echo $producto->id ?>" class="btn btn-warning btn-circle btn-sm">
                                                   <i class="fas fa-pen"></i>
                                             </a>
-                                            <a href="#" class="btn btn-danger btn-circle btn-sm">
+                                            <a href="index.php?view=deleteProducto_Controller&amp;id=<?php echo $producto->id ?>" 
+                                             class="btn btn-danger btn-circle btn-sm">
                                                   <i class="fas fa-trash"></i>
                                             </a>
                                             </td> 

@@ -5,7 +5,7 @@ var_dump( $_POST );
 if(count($_POST)>0){
 
     $producto = new productoData();
-
+    $producto->codigoProducto = $_POST["codigoProducto"];
     $producto->nombre = $_POST["nombre"];
 	$producto->calibre = $_POST["calibre"];
 	$producto->grado_brix = $_POST["grado_brix"];

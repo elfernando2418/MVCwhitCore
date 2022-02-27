@@ -114,7 +114,7 @@ if (!isset($_SESSION['idUsuario']  )) {
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pantallas de Reportes:</h6>
                         <a class="collapse-item" href="index.php?view=reporteCalidad_view">Modulo Calidad</a>
-                        <a class="collapse-item"href="index.php?view=reporteCalidad_view">Producto y Materia Prima</a>
+                        <a class="collapse-item"  onclick="generarPdf()" >Producto y Materia Prima</a>
 
                     </div>
                 </div>
@@ -222,16 +222,27 @@ if (!isset($_SESSION['idUsuario']  )) {
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">¿Está seguro de Cerrar la Sesión?</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="index.php?view=logout_controller">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-primary" href="index.php?view=logout_controller">Cerrar Sesión</a>
                 </div>
             </div>
         </div>
     </div>
 
+    <script>
+        function generarPdf() {
 
+
+            window.open('pdfGENERATOR', '_black');
+
+
+
+
+
+        }
+        </script>
 
 
 

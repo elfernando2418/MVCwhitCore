@@ -55,7 +55,7 @@
             <label for="fom_data" class="form-label">Producto</label>
             <div class="form-select" aria-label="Default select example">
                 <select name="id_producto" id="id_producto" class="form-control">
-                    <option selected>Ninguna Opcion Seleccionada</option>
+                    <option selected value="" >Ninguna Opcion Seleccionada</option>
 
                  
                     <?php foreach($productos as $producto){
@@ -85,7 +85,7 @@
             <label for="dimension" class="form-label">Estado Producto</label>
             <div class="form-select" aria-label="Default select example">
                 <select name="id_estadoProducto" id="id_estadoProducto" class="form-control">
-                    <option selected>Ninguna Opcion Seleccionada</option>
+                    <option selected value="" >Ninguna Opcion Seleccionada</option>
                     <option  value="1">PENDIENTE </option>
                     <option  value="2">ENVIADO </option>
                 </select>
@@ -115,8 +115,10 @@
     let remitente = document.getElementById("remitente").value;
     let destinatario = document.getElementById("destinatario").value;
     let peso = document.getElementById("peso").value;
+    let id_estadoProducto = document.getElementById("id_estadoProducto").value;
+    let id_producto = document.getElementById("id_producto").value;
  
-
+    
     if (!codigo_ruta.trim()) {
         swal("Debe Ingresar un Código de Ruta", '', 'warning');
         return false
@@ -149,8 +151,16 @@
         swal("Debe Ingresar un Destinatario", '', 'warning');
         return false
     }
+    if (!id_producto.trim()) {
+        swal("Debe Seleccionar un Producto", '', 'warning');
+        return false
+    }
     if (!peso.trim()) {
         swal("Debe Ingresar un Peso", '', 'warning');
+        return false
+    }
+    if (!id_estadoProducto.trim()) {
+        swal("Debe Seleccionar un Estado del Producto", '', 'warning');
         return false
     }
 

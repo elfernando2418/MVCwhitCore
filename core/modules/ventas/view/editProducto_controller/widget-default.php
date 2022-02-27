@@ -5,8 +5,9 @@ if(count($_POST)>0){
 
     $producto = new productoData();
  
-
+    
     $producto->id = $_POST["id"];
+    $producto->codigoProducto = $_POST["codigoProducto"];
     $producto->nombre = $_POST["nombre"];
     $producto->calibre = $_POST["calibre"];
     $producto->grado_brix = $_POST["grado_brix"];

@@ -17,10 +17,16 @@ $lotes = loteData::getAll( );
 <form class="row g-3" method="POST" onsubmit="return validarDatos()" action="index.php?view=addProducto_controlador">
     <div class="col-md-12" style="max-width: 500px;">
 
+    <div class="col-md-12 mt-1">
+            <label for="codigoProducto" class="form-label">Código Producto</label>
+            <input name="codigoProducto" type="text" class="form-control" id="codigoProducto">
+        </div>
+
         <div class="col-md-12 mt-1">
             <label for="nombre" class="form-label">Nombre</label>
             <input name="nombre" type="text" class="form-control" id="nombre">
         </div>
+        
         <div class="col-md-12 mt-1">
             <label for="calibre" class="form-label">Calibre</label>
             <input name="calibre" type="text" class="form-control" id="calibre">
@@ -40,7 +46,7 @@ $lotes = loteData::getAll( );
             <label for="dimension" class="form-label">Seleccione número de Lote</label>
             <div class="form-select" aria-label="Default select example">
                 <select name="id_lote" id="id_lote" class="form-control">
-                    <option selected>Ninguna Opcion Seleccionada</option>
+                    <option selected value="">Ninguna Opcion Seleccionada</option>
 
                     <?php  foreach($lotes as $lote){
                         ?>
@@ -85,43 +91,7 @@ $lotes = loteData::getAll( );
 
 <script>
 
-sumaFecha = function(d, fecha) {
-    var Fecha = new Date();
-    var sFecha = fecha || (Fecha.getDate() + "/" + (Fecha.getMonth() + 1) + "/" + Fecha.getFullYear());
-    var sep = sFecha.indexOf('/') != -1 ? '/' : '-';
-    var aFecha = sFecha.split(sep);
-    var fecha = aFecha[2] + '/' + aFecha[1] + '/' + aFecha[0];
-    fecha = new Date(fecha);
-    fecha.setDate(fecha.getDate() + parseInt(d));
-    var anno = fecha.getFullYear();
-    var mes = fecha.getMonth() + 1;
-    var dia = fecha.getDate();
-    mes = (mes < 10) ? ("0" + mes) : mes;
-    dia = (dia < 10) ? ("0" + dia) : dia;
-    var fechaFinal = dia + sep + mes + sep + anno;
-    return (fechaFinal);
-}
-
-function formatDate(input) {
-    var datePart = input.match(/\d+/g),
-        year = datePart[0].substring(2), // get only two digits
-        month = datePart[1],
-        day = datePart[2];
-
-    return day + '/' + month + '/' + year;
-}
-
-
-
-function fechaCaduca() {
-    let fechaInicio = document.getElementById("fecha_ingreso").value;
-    let fechaFi =  formatDate(fechaInicio);
-    console.log(fechaFi )
-  //  var fecha = sumaFecha(8,);
-  //  alert(fecha);
-
-}
-
+ 
 function validarDatos() {
 
 let nombre = document.getElementById("nombre").value;
@@ -129,7 +99,12 @@ let calibre = document.getElementById("calibre").value;
 let grado_brix = document.getElementById("grado_brix").value;
 let peso = document.getElementById("peso").value;
 let fecha_ingreso = document.getElementById("fecha_ingreso").value;
+let codigoProducto = document.getElementById("codigoProducto").value;
 
+if (!codigoProducto.trim()) {
+    swal("Debe Ingresar un Código Producto", '', 'warning');
+    return false
+}
 
 if (!nombre.trim()) {
     swal("Debe Ingresar un Nombre", '', 'warning');
@@ -151,6 +126,12 @@ if (!fecha_ingreso.trim()) {
     swal("Debe Ingresar una Fecha", '', 'warning');
     return false
 }
+
+if (!id_lote.trim()) {
+    swal("Debe Seleccionar un Lote", '', 'warning');
+    return false
+}
+
 
 console.log('here')
 return true;

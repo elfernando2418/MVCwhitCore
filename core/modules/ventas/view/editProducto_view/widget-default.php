@@ -30,6 +30,11 @@
               <input name="id" type="text" class="form-control" id="id"
                   value="<?php echo $producto->id  ?>">
           </div>
+          <div class="col-md-12 mt-1">
+              <label for="codigoProducto" class="form-label">Código Producto</label>
+              <input name="codigoProducto" type="text" class="form-control" id="codigoProducto"
+                  value="<?php echo $producto->codigoProducto  ?>">
+          </div>
 
           <div class="col-md-12 mt-1">
               <label for="nombre" class="form-label">Nombre</label>
@@ -55,7 +60,7 @@
               <label for="dimension" class="form-label">Seleccione número de Lote</label>
               <div class="form-select" aria-label="Default select example">
                   <select name="id_lote" id="id_lote" class="form-control">
-                      <option>Ninguna Opcion Seleccionada</option>
+                      
 
                       <?php  foreach($lotes as $lote){
 
@@ -118,8 +123,12 @@
     let grado_brix = document.getElementById("grado_brix").value;
     let peso = document.getElementById("peso").value;
     let fecha_ingreso = document.getElementById("fecha_ingreso").value;
- 
+    let codigoProducto = document.getElementById("codigoProducto").value;
 
+    if (!codigoProducto.trim()) {
+        swal("Debe Ingresar Código Producto", '', 'warning');
+        return false
+    }
     if (!nombre.trim()) {
         swal("Debe Ingresar un Nombre", '', 'warning');
         return false

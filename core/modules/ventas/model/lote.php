@@ -80,11 +80,11 @@ class LoteData { // nombre de tabla seguido de la palabra Data
 	}
 
 
-	public function delete(){
+	public function delete($id){
 		
-	/*	$sql = "U ->id";
+		$sql = "UPDATE lote SET  status = 0 WHERE id = $id";
 	
-		Executor::doit($sql);*/
+		Executor::doit($sql);
 	}
 
 	public static function getAllName(){

@@ -41,7 +41,7 @@
               <label for="dimension" class="form-label">Tipo de Materia</label>
               <div class="form-select" aria-label="Default select example">
                   <select name="id_tipo_mateira" id="id_tipo_mateira" class="form-control">
-                      <option >Ninguna Opcion Seleccionada</option>
+                       
                       <?php 
                     
                     if( $materia->id_tipo_mateira == "1") {?>

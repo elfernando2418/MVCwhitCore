@@ -1,18 +1,38 @@
 <?php
-	$productos = productoData::getAll();
-
-    $lotes = loteData::getAll( );
  
+    $productos = productoData::getAll();
+ 
+  $totalProductos = count($productos  );
+  $totalLocal = 0;
+  $totalExportacion = 0;
+  foreach($productos as $producto ){
+    $calibre = $producto->calibre;
+    $gradoBrix = $producto->grado_brix;
+    
+    if( $calibre >= 5 && $calibre <= 10  && $gradoBrix == 12 ){                     
+    //  echo "Exportación";
+      $totalExportacion++;
+    }else{
+      $totalLocal++;
+  //  echo "Local";
+    }
+  }
+
+
+  
+
+
 ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
 <h1>MODULO CALIDAD </h1>
+<br><br>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
  
 <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
 <script>
-var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-var yValues = [55, 49, 44, 24, 15];
+var xValues = ["Total Productos", "Local", "Exportación", "", ""];
+var yValues = [<?php echo $totalProductos?> , <?php echo $totalLocal?> ,  <?php echo $totalExportacion?> , 0, 0];
 var barColors = ["red", "green","blue","orange","brown"];
 
 new Chart("myChart", {
@@ -28,7 +48,7 @@ new Chart("myChart", {
     legend: {display: false},
     title: {
       display: true,
-      text: "World Wine Production 2018"
+      text: "Cantidad de Productos Local - Exportación"
     }
   }
 });

@@ -67,8 +67,7 @@ $rutas = envio_productoData::getById($_GET['id']);
             <label for="fom_data" class="form-label">Producto</label>
             <div class="form-select" aria-label="Default select example">
                 <select name="id_producto" id="id_producto" class="form-control">
-                    <option selected>Ninguna Opcion Seleccionada</option>
-
+                     
 
                     <?php foreach($productos as $producto){
                             if( $rutas->id_producto == $producto->id  ){?>
@@ -115,7 +114,7 @@ $rutas = envio_productoData::getById($_GET['id']);
             <label for="dimension" class="form-label">Estado Producto</label>
             <div class="form-select" aria-label="Default select example">
                 <select name="id_estadoProducto" id="id_estadoProducto" class="form-control">
-                    <option selected>Ninguna Opcion Seleccionada</option>
+                    
                     <?php 
                     
                      if( $rutas->id_estadoProducto == 1) {?>
