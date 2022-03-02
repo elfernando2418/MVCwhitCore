@@ -2,7 +2,7 @@
 
 if(count($_POST)>0){
     $lote = new LoteData();
-var_dump($_POST);
+
     
     $lote->id = $_POST['id'];
     $lote->codigo = $_POST['codigo'];

@@ -55,7 +55,7 @@
             <label for="fom_data" class="form-label">Producto</label>
             <div class="form-select" aria-label="Default select example">
                 <select name="id_producto" id="id_producto" class="form-control">
-                    <option selected value="" >Ninguna Opcion Seleccionada</option>
+                    <option selected value="" >Ninguna Opción Seleccionada</option>
 
                  
                     <?php foreach($productos as $producto){
@@ -85,7 +85,7 @@
             <label for="dimension" class="form-label">Estado Producto</label>
             <div class="form-select" aria-label="Default select example">
                 <select name="id_estadoProducto" id="id_estadoProducto" class="form-control">
-                    <option selected value="" >Ninguna Opcion Seleccionada</option>
+                    <option selected value="" >Ninguna Opción Seleccionada</option>
                     <option  value="1">PENDIENTE </option>
                     <option  value="2">ENVIADO </option>
                 </select>

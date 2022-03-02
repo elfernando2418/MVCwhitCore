@@ -1,6 +1,5 @@
 <?php
 
-var_dump( $_POST );
 
 if(count($_POST)>0){
 

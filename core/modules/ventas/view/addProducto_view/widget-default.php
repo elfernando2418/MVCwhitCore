@@ -46,7 +46,7 @@ $lotes = loteData::getAll( );
             <label for="dimension" class="form-label">Seleccione número de Lote</label>
             <div class="form-select" aria-label="Default select example">
                 <select name="id_lote" id="id_lote" class="form-control">
-                    <option selected value="">Ninguna Opcion Seleccionada</option>
+                    <option selected value="">Ninguna Opción Seleccionada</option>
 
                     <?php  foreach($lotes as $lote){
                         ?>
@@ -73,7 +73,7 @@ $lotes = loteData::getAll( );
         </div>
 
 
-        <div class="col-md-12 mt-1">
+        <div class="col-md-12 mt-1" style="display:none">
             <label for="fecha_caducidad" class="form-label">Fecha de Caducidad</label>
             <input name="fecha_caducidad" type="date" class="form-control" id="fecha_caducidad">
         </div>
@@ -91,6 +91,42 @@ $lotes = loteData::getAll( );
 
 <script>
 
+function fechaCaduca(){
+
+    let fechaInicio = document.getElementById("fecha_ingreso").value;
+ console.log(fechaInicio)
+
+
+    var tmpDate = new Date(fechaInicio); // Augest 20, 2020
+  //  console.log(tmpDate);
+  //  console.log();
+     let finFecha = addDaysToDate(tmpDate, 15);
+
+    let ffff =  formatDate(finFecha);
+   // console.log(ffff)
+    document.getElementById("fecha_caducidad").value =  ffff;
+   
+}
+
+function addDaysToDate(date, days){
+    var res = new Date(date);
+    res.setDate(res.getDate() + days);
+    return res;
+}
+
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+
+    return [year, month, day].join('-');
+}
  
 function validarDatos() {
 

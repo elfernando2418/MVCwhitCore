@@ -98,7 +98,7 @@ if (!isset($_SESSION['idUsuario']  )) {
                     <span>Rutas</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php?view=lote_view">
+                <a class="nav-link" href="index.php?view=usuario">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Usuario</span></a>
             </li>

@@ -18,9 +18,9 @@
             <table class="table table-bordered" id="dataTable" width="95%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Codigo</th>
-                        <th>Numero</th>
-                        <th>Fecha de Elaboracion</th>
+                        <th>Código</th>
+                        <th>Número</th>
+                        <th>Fecha de Elaboración</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>

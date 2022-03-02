@@ -100,7 +100,7 @@
               <input name="fecha_ingreso" type="date" class="form-control" id="fecha_ingreso"
                   value="<?php echo $producto->fecha_ingreso  ?>">
           </div>
-          <div class="col-md-12 mt-1">
+          <div class="col-md-12 mt-1" style="display:none">
               <label for="fecha_caducidad" class="form-label">Fecha de Caducidad</label>
               <input name="fecha_caducidad" type="date" class="form-control" id="fecha_caducidad"
                   value="<?php echo $producto->fecha_caducidad  ?>">
@@ -116,6 +116,58 @@
   </form>
 
   <script>
+
+
+
+function fechaCaduca(){
+
+let fechaInicio = document.getElementById("fecha_ingreso").value;
+console.log(fechaInicio)
+
+
+var tmpDate = new Date(fechaInicio); // Augest 20, 2020
+//  console.log(tmpDate);
+//  console.log();
+ let finFecha = addDaysToDate(tmpDate, 15);
+
+let ffff =  formatDate(finFecha);
+// console.log(ffff)
+document.getElementById("fecha_caducidad").value =  ffff;
+
+}
+
+function addDaysToDate(date, days){
+var res = new Date(date);
+res.setDate(res.getDate() + days);
+return res;
+}
+
+function formatDate(date) {
+var d = new Date(date),
+    month = '' + (d.getMonth() + 1),
+    day = '' + d.getDate(),
+    year = d.getFullYear();
+
+if (month.length < 2) 
+    month = '0' + month;
+if (day.length < 2) 
+    day = '0' + day;
+
+return [year, month, day].join('-');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
   function validarDatos() {
 
     let nombre = document.getElementById("nombre").value;

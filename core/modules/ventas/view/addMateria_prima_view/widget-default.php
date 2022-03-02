@@ -21,7 +21,7 @@
             <label for="dimension" class="form-label">Tipo Materia Prima</label>
             <div class="form-select" aria-label="Default select example">
                 <select name="id_tipo_mateira" id="id_tipo_mateira" class="form-control">
-                    <option selected value="">Ninguna Opcion Seleccionada</option>
+                    <option selected value="">Ninguna Opción Seleccionada</option>
 
                     <option value="1">Hijuelos</option>
                     <option value="2">Abono</option>

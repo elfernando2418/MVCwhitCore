@@ -9,15 +9,15 @@ class usuarioData { // nombre de tabla seguido de la palabra Data
         $this->telefono ="";
         $this->email ="";
 		$this->password ="";
+		$this->tipo ="";
 		$this->status =0;
 	}
 
 	public function add(){
 		//falta campo password
-		$sql = "INSERT INTO usuario (nombre, fecha_ingreso, telefono, email, status) ";
+		$sql = "INSERT INTO usuario (nombre, fecha_ingreso, telefono, email,password,tipo, status) ";
 
-        $sql .= "value (\"$this->nombre\",\"$this->fecha_ingreso\",\"$this->telefono\",\"$this->email\", 1)";
-
+        $sql .= "value (\"$this->nombre\",NOW(),\"$this->telefono\",\"$this->email\",\"$this->password\",\"$this->tipo\", 1)";
 		Executor::doit($sql);
 
 	}
@@ -42,6 +42,7 @@ class usuarioData { // nombre de tabla seguido de la palabra Data
 			$array[$cnt]->fecha_ingreso = $r['fecha_ingreso'];
             $array[$cnt]->telefono = $r['telefono'];
 			$array[$cnt]->email = $r['email'];
+			$array[$cnt]->tipo = $r['tipo'];
 			$array[$cnt]->status = $r['status'];
 			$cnt++;
 		}
@@ -66,7 +67,8 @@ class usuarioData { // nombre de tabla seguido de la palabra Data
 			$data->fecha_ingreso = $r['fecha_ingreso'];
 			$data->telefono = $r['telefono'];
             $data->email = $r['email'];
- 
+			$data->password = $r['password'];
+			$data->tipo = $r['tipo'];
 			$found = $data;
 			break;
 
@@ -97,17 +99,14 @@ class usuarioData { // nombre de tabla seguido de la palabra Data
 	}
 	public function update(){
 		
-		$sql = "UPDATE usuario SET nombre = \"$this->nombre\" , fecha_ingreso = \"$this->fecha_ingreso\" , telefono = \"$this->telefono\" , email = \"$this->email\" WHERE id = $this->id";
-	
+		$sql = "UPDATE usuario SET nombre = \"$this->nombre\"  , telefono = \"$this->telefono\" , email = \"$this->email\" , password = \"$this->password\" , tipo = \"$this->tipo\" WHERE id = $this->id";
 		Executor::doit($sql);
 	}
 
 
-	public function delete(){
-		
-	/*	$sql = "U ->id";
-	
-		Executor::doit($sql);*/
+	public function delete($id){
+		$sql = "UPDATE usuario SET status = 0 WHERE id =  $id";
+		Executor::doit($sql);
 	}
 	 
 
