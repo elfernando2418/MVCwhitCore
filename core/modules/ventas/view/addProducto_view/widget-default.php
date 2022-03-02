@@ -29,15 +29,15 @@ $lotes = loteData::getAll( );
         
         <div class="col-md-12 mt-1">
             <label for="calibre" class="form-label">Calibre</label>
-            <input name="calibre" type="text" class="form-control" id="calibre">
+            <input name="calibre" type="number" class="form-control" id="calibre">
         </div>
         <div class="col-md-12 mt-1">
             <label for="grado_brix" class="form-label">Grado Brix</label>
-            <input name="grado_brix" type="text" class="form-control" id="grado_brix">
+            <input name="grado_brix" type="number" class="form-control" id="grado_brix">
         </div>
         <div class="col-md-12 mt-1">
             <label for="peso" class="form-label">Peso</label>
-            <input name="peso" type="text" class="form-control" id="peso">
+            <input name="peso" step="0.001" min="0.95" max="3" type="number" class="form-control" id="peso">
         </div>
 
 
@@ -129,7 +129,7 @@ function formatDate(date) {
 }
  
 function validarDatos() {
-
+    fechaCaduca();
 let nombre = document.getElementById("nombre").value;
 let calibre = document.getElementById("calibre").value;
 let grado_brix = document.getElementById("grado_brix").value;

@@ -46,7 +46,11 @@
                         <td> <?php  echo  $ruta->numero_envio;    ?></td>
                         <td> <?php  echo  $ruta->remitente;    ?></td>
                         <td> <?php  echo  $ruta->destinatario;    ?></td>
-                        <td> <?php  echo  $ruta->id_producto;    ?></td>
+                        <td> <?php 
+                        	$producto = productoData::getById($ruta->id_producto);
+                        
+                         echo $producto->nombre;    
+                         ?></td>
                         <td> <?php  echo  $ruta->peso;    ?></td>
                         <td> <?php  
 

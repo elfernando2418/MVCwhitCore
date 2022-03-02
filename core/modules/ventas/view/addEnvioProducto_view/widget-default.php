@@ -9,7 +9,7 @@
     <a href="index.php" class="btn btn-dark btn-circle btn-sm">
         <i class="fas fa-angle-left"></i>
     </a>
-    <h1>Registro de Producto</h1>
+    <h1>Registro de Ruta</h1>
 </div>
 
 <form class="row g-3" method="POST" onsubmit="return validarDatos()" action="index.php?view=addEnvioProducto_controller">
@@ -75,7 +75,7 @@
 
         <div class="col-md-12 mt-1">
             <label for="fom_data" class="form-label">peso</label>
-            <input name="peso" type="number" class="form-control" id="peso">
+            <input name="peso" type="number"  step="0.001" class="form-control" id="peso">
         </div>
 
 

@@ -5,7 +5,7 @@ $usuario = usuarioData::getById($_GET['id']);
 ?>
 
 <div class="col-md-12 mb-2">
-    <a href="index.php?view=" class="btn btn-dark btn-circle btn-sm">
+    <a href="index.php?view=usuario" class="btn btn-dark btn-circle btn-sm">
         <i class="fas fa-angle-left"></i>
     </a>
     <h1>Editar Usuario</h1>

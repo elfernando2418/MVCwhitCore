@@ -9,9 +9,22 @@
     $calibre = $producto->calibre;
     $gradoBrix = $producto->grado_brix;
     
-    if( $calibre >= 5 && $calibre <= 10  && $gradoBrix == 12 ){                     
+    if( $calibre >= 5 && $calibre <= 10  && $gradoBrix >= 12 && $gradoBrix <= 15 ){   
+
+
+      if( strpos( $producto->nombre, "md2",0)!== false  ){
+        $totalExportacion++;
+      }
+      else if( strpos( $producto->nombre, "MD2",0)!== false  ){
+        $totalExportacion++;
+      }else if( strpos( $producto->nombre, "Md2",0)!== false  ){
+        $totalExportacion++;
+      }else{
+        $totalLocal++;
+      }
+
     //  echo "Exportación";
-      $totalExportacion++;
+      
     }else{
       $totalLocal++;
   //  echo "Local";

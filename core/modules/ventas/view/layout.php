@@ -7,7 +7,7 @@ if (!isset($_SESSION['idUsuario']  )) {
     
     $idUsuario = $_SESSION['idUsuario'];
     $usuarioGet = usuarioData::getById($idUsuario);
-  
+//    var_dump();
     ?>
 
 
@@ -46,13 +46,13 @@ if (!isset($_SESSION['idUsuario']  )) {
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center"
+            <a class="sidebar-brand d-flex align-items-center justify-content-center mb-2 mt-3"
                 href="index.php?view=controlCalidad_view">
                 <div class="sidebar-brand-icon rotate-n-15">
 
                     <i class="fas fa-solid fa-truck"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Sistema de Inventario</div>
+                <div class="sidebar-brand-text mx-3">Sistema de Control de Calidad</div>
             </a>
 
             <!-- Divider -->
@@ -81,6 +81,9 @@ if (!isset($_SESSION['idUsuario']  )) {
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Producto</span></a>
             </li>
+            <?php 
+            if($usuarioGet->tipo == "ADMINISTRADOR"){?>
+
             <li class="nav-item">
                 <a class="nav-link" href="index.php?view=controlCalidad_view">
                     <i class="fas fa-fw fa-chart-area"></i>
@@ -92,17 +95,22 @@ if (!isset($_SESSION['idUsuario']  )) {
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Control Caducidad</span></a>
             </li>
+            
+           <?php }?>
             <li class="nav-item">
                 <a class="nav-link" href="index.php?view=envio_producto_view">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Rutas</span></a>
             </li>
+
+            <?php 
+            if($usuarioGet->tipo == "ADMINISTRADOR"){?>
             <li class="nav-item">
                 <a class="nav-link" href="index.php?view=usuario">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Usuario</span></a>
             </li>
-
+            <?php }?>
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"

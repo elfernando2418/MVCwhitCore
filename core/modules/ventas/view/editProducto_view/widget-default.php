@@ -43,17 +43,17 @@
           </div>
           <div class="col-md-12 mt-1">
               <label for="calibre" class="form-label">Calibre</label>
-              <input name="calibre" type="text" class="form-control" id="calibre"
+              <input name="calibre" type="number" class="form-control" id="calibre"
                   value="<?php echo $producto->calibre  ?>">
           </div>
           <div class="col-md-12 mt-1">
               <label for="grado_brix" class="form-label">Grado Brix</label>
-              <input name="grado_brix" type="text" class="form-control" id="grado_brix"
+              <input name="grado_brix" type="number" class="form-control" id="grado_brix"
                   value="<?php echo $producto->grado_brix  ?>">
           </div>
           <div class="col-md-12 mt-1">
               <label for="peso" class="form-label">Peso</label>
-              <input name="peso" type="text" class="form-control" id="peso" value="<?php echo $producto->peso  ?>">
+              <input name="peso" min="0.95" max="3" type="number" step="0.001" class="form-control" id="peso" value="<?php echo $producto->peso  ?>">
           </div>
 
           <div class="col-md-12 mt-1">
@@ -118,7 +118,6 @@
   <script>
 
 
-
 function fechaCaduca(){
 
 let fechaInicio = document.getElementById("fecha_ingreso").value;
@@ -167,9 +166,8 @@ return [year, month, day].join('-');
 
 
 
-
   function validarDatos() {
-
+    fechaCaduca();
     let nombre = document.getElementById("nombre").value;
     let calibre = document.getElementById("calibre").value;
     let grado_brix = document.getElementById("grado_brix").value;

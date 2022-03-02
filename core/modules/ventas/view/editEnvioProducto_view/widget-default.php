@@ -104,7 +104,7 @@ $rutas = envio_productoData::getById($_GET['id']);
 
         <div class="col-md-12 mt-1">
             <label for="fom_data" class="form-label">peso</label>
-            <input value="<?php echo $rutas->peso ?>" name="peso" type="number" class="form-control" id="peso">
+            <input value="<?php echo $rutas->peso ?>" name="peso" type="number" step="0.001" class="form-control" id="peso">
         </div>
 
 

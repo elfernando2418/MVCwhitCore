@@ -60,7 +60,7 @@ $pdf->Cell($width_cell[0],10, $producto->codigoProducto ,1,0,'C',false); // Firs
 
 $pdf->Cell($width_cell[1],10,'Producto'  ,1,0,'C',false); // Second column of row 1 
 
-$pdf->Cell($width_cell[2],10,   $producto->nombre ,1,0,'C',false); // Third column of row 1 
+$pdf->Cell($width_cell[2],10,  utf8_decode( $producto->nombre) ,1,0,'C',false); // Third column of row 1 
 
 $pdf->Cell($width_cell[3],10,  $loteData->numero  ,1,1,'C',false); // Fourth column of row 1 
 //  First row of data is over 
