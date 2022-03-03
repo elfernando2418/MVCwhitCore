@@ -8,7 +8,13 @@ if(count($_POST)>0){
     $usuario->nombre = $_POST["nombre"];
     $usuario->telefono = $_POST["telefono"];
     $usuario->email = $_POST["email"];
-    $usuario->password = $_POST["password"];
+
+    $hash=password_hash($_POST["password"], PASSWORD_DEFAULT);
+ 
+
+
+	$usuario->password =$hash;
+     
     $usuario->tipo = $_POST["tipo"];
 	$usuario->update();
    

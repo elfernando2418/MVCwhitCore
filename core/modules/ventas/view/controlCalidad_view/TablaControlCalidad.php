@@ -54,7 +54,7 @@ $productos = productoData::getByTipo($_POST['tipo']);
                         if( ($calibre == 9  || $calibre == 8 ) &&  ( $peso >= 1.2 && $peso <= 1.55  ) ){ // Categoria B
                             echo "Categoria B";
                         }
-                        if( ($calibre == 7  || $calibre == 5 ) &&  (   $peso >= 1.56  ) ){ // Categoria A
+                        if( ($calibre == 7  || $calibre == 5  || $calibre == 6 ) &&  (   $peso >= 1.56  ) ){ // Categoria A
                             echo "Categoria A";
                         }
                             

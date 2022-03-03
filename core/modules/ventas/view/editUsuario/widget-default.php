@@ -35,7 +35,7 @@ $usuario = usuarioData::getById($_GET['id']);
         </div>
         <div class="col-md-12 mt-1">
             <label for="password" class="form-label">Contraseña</label>
-            <input value="<?php  echo $usuario->password ?>" name="password" type="password" class="form-control"
+            <input  name="password" type="password" class="form-control"
                 id="password">
         </div>
 
@@ -64,7 +64,7 @@ $usuario = usuarioData::getById($_GET['id']);
 
 
         <div class="col-12 mt-4">
-            <button type="submit" class="btn btn-primary">Agregar Usuario</button>
+            <button type="submit" class="btn btn-primary">Editar Usuario</button>
         </div>
 
     </div>
@@ -78,11 +78,24 @@ function validarDatos() {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
 
-    if (!codigoProducto.trim()) {
-        swal("Debe Ingresar un Código Producto", '', 'warning');
+    if (!nombre.trim()) {
+        swal("Debe Ingresar un Nombre", '', 'warning');
         return false
     }
 
+    if (!telefono.trim()) {
+        swal("Debe Ingresar un Teléfono", '', 'warning');
+        return false
+    }
+    if (!email.trim()) {
+        swal("Debe Ingresar un Email", '', 'warning');
+        return false
+    }
+    if (!password.trim()) {
+        swal("Debe Ingresar una Contraseña", '', 'warning');
+        return false
+    }
+  
 
     console.log('here')
     return true;

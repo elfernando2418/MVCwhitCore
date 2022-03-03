@@ -77,9 +77,9 @@ class usuarioData { // nombre de tabla seguido de la palabra Data
 	}
 
 
-	public static function getByemailPassword($email,$password){
+	public static function getByemailPassword($email){
 
-		$sql = "SELECT * FROM usuario WHERE usuario.email = \"$email\" AND usuario.password = \"$password\" AND usuario.status = 1";
+		$sql = "SELECT * FROM usuario WHERE usuario.email = \"$email\"  AND usuario.status = 1";
 
 		$query = Executor::doit($sql);
 
@@ -90,7 +90,7 @@ class usuarioData { // nombre de tabla seguido de la palabra Data
 		while($r = $query[0]->fetch_array()){
 
 			$data->id = $r['id'];
-		 
+			$data->password = $r['password'];
 			$found = $data;
 			break;
 
@@ -109,8 +109,7 @@ class usuarioData { // nombre de tabla seguido de la palabra Data
 		Executor::doit($sql);
 	}
 	 
-
-	
+	 
 
 }
 
