@@ -6,4 +6,4 @@ include "core/autoload.php";
 // cargamos el modulo iniciar.
 Core::loadModule("ventas");
 
-?>
+?> 
