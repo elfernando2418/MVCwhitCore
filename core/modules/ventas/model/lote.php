@@ -108,6 +108,26 @@ class LoteData { // nombre de tabla seguido de la palabra Data
 	}
 
 
+	public static function getLastId(){
+
+		$sql = "SELECT id FROM lote WHERE id=  (SELECT MAX(id) FROM lote) ";
+
+		$query = Executor::doit($sql);
+
+		$found = null;
+
+		$data = new loteData(); // aqui cambia
+
+		while($r = $query[0]->fetch_array()){
+
+			$data->id = $r['id'];
+			
+			$found = $data;
+			break;
+
+		}
+		return $found;
+	}
 }
 
 ?>

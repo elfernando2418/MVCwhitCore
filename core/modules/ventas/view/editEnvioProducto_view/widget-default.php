@@ -23,7 +23,7 @@ $rutas = envio_productoData::getById($_GET['id']);
         </div>
         <div class="col-md-12 mt-1">
             <label for="fom_data" class="form-label">codigo_ruta</label>
-            <input value="<?php echo $rutas->codigo_ruta ?>" name="codigo_ruta" type="text" class="form-control"
+            <input readonly value="<?php echo $rutas->codigo_ruta ?>" name="codigo_ruta" type="text" class="form-control"
                 id="codigo_ruta">
         </div>
         <div class="col-md-12 mt-1">

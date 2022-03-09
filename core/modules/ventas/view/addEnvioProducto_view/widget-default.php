@@ -2,11 +2,16 @@
 
 <?php
 	$productos = productoData::getAll();
-
+    $lastId = envio_productoData::getLastId(  );
+    //var_dump($lote);
+    $code="L0000";
+    if( isset($lastId->id)){
+        $code = $code.($lastId->id+1);
+    }
 	 
 ?>
 <div class="col-md-12 mb-2">
-    <a href="index.php" class="btn btn-dark btn-circle btn-sm">
+    <a href="index.php?view=envio_producto_view" class="btn btn-dark btn-circle btn-sm">
         <i class="fas fa-angle-left"></i>
     </a>
     <h1>Registro de Ruta</h1>
@@ -17,36 +22,36 @@
 
         
         <div class="col-md-12 mt-1">
-            <label for="fom_data" class="form-label">codigo_ruta</label>
-            <input name="codigo_ruta" type="text" class="form-control" id="codigo_ruta">
+            <label for="fom_data" class="form-label">Código Ruta</label>
+            <input readonly name="codigo_ruta"  value="<?php echo $code;?>"  type="text" class="form-control" id="codigo_ruta">
         </div>
         <div class="col-md-12 mt-1">
-            <label for="fom_data" class="form-label">fecha_transporte</label>
-            <input name="fecha_transporte" type="date" class="form-control" id="fecha_transporte">
+            <label for="fom_data" class="form-label">Fecha Transporte</label>
+            <input min="<?= date('Y-m-d'); ?>"  name="fecha_transporte" type="date" class="form-control" id="fecha_transporte">
         </div>
         <div class="col-md-12 mt-1">
-            <label for="fom_data" class="form-label">empresa_transporte</label>
+            <label for="fom_data" class="form-label">Empresa Transporte</label>
             <input name="empresa_transporte" type="text" class="form-control" id="empresa_transporte">
         </div>
         <div class="col-md-12 mt-1">
-            <label for="fom_data" class="form-label">nombre_conductor</label>
+            <label for="fom_data" class="form-label">Nombre Conductor</label>
             <input name="nombre_conductor" type="text" class="form-control" id="nombre_conductor">
         </div>
         <div class="col-md-12 mt-1">
-            <label for="fom_data" class="form-label">placa</label>
+            <label for="fom_data" class="form-label">Placa</label>
             <input name="placa" type="text" class="form-control" id="placa">
         </div>
         <div class="col-md-12 mt-1">
-            <label for="fom_data" class="form-label">numero_envio</label>
+            <label for="fom_data" class="form-label">Numero de Envío</label>
             <input name="numero_envio" type="number" class="form-control" id="numero_envio">
         </div>
         <div class="col-md-12 mt-1">
-            <label for="fom_data" class="form-label">remitente</label>
-            <input name="remitente" type="text" class="form-control" id="remitente">
+            <label for="fom_data" class="form-label">Remitente</label>
+            <input pattern="[A-Za-z ]+" name="remitente" type="text" class="form-control" id="remitente">
         </div>
         <div class="col-md-12 mt-1">
-            <label for="fom_data" class="form-label">destinatario</label>
-            <input name="destinatario" type="text" class="form-control" id="destinatario">
+            <label for="fom_data" class="form-label">Destinatario</label>
+            <input pattern="[A-Za-z ]+" name="destinatario" type="text" class="form-control" id="destinatario">
         </div>
 
 
@@ -74,7 +79,7 @@
         </div>
 
         <div class="col-md-12 mt-1">
-            <label for="fom_data" class="form-label">peso</label>
+            <label for="fom_data" class="form-label">Peso</label>
             <input name="peso" type="number"  step="0.001" class="form-control" id="peso">
         </div>
 
@@ -151,6 +156,8 @@
         swal("Debe Ingresar un Destinatario", '', 'warning');
         return false
     }
+    
+
     if (!id_producto.trim()) {
         swal("Debe Seleccionar un Producto", '', 'warning');
         return false

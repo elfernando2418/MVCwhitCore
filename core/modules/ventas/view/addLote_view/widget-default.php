@@ -1,5 +1,16 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   
+<?php
+
+$lote = LoteData::getLastId(  );
+//var_dump($lote);
+$code="L0000";
+if( isset($lote->id)){
+    $code = $code.($lote->id+1);
+}
+//echo $code;
+//echo "<br>";
+?>
 <div class="col-md-12 mb-2">
     <a href="index.php?view=lote_view" class="btn btn-dark btn-circle btn-sm">
         <i class="fas fa-angle-left"></i>
@@ -10,9 +21,9 @@
 <form class="row g-3" method="POST"  onsubmit="return validarDatos()"  action="index.php?view=addLote_controlador">
     <div class="col-md-12" style="max-width: 500px;">
 
-        <div class="col-md-12 mt-1">
+        <div class="col-md-12 mt-1" >
             <label for="codigo" class="form-label">Codigo</label>
-            <input name="codigo" type="text" class="form-control" id="codigo">
+            <input  readonly name="codigo" value="<?php echo $code;?>" type="text" class="form-control" id="codigo">
         </div>
 
         <div class="col-md-12 mt-1">
@@ -22,7 +33,7 @@
 
         <div class="col-md-12 mt-1">
             <label for="fecha_elaboracion" class="form-label">Fecha Elaboracion</label>
-            <input name="fecha_elaboracion" type="date" class="form-control" id="fecha_elaboracion">
+            <input min="<?= date('Y-m-d'); ?>"  name="fecha_elaboracion" type="date" class="form-control" id="fecha_elaboracion">
         </div>
 
 

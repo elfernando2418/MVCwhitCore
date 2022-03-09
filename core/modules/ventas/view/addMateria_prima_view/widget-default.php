@@ -1,5 +1,15 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<?php
 
+$lote = materia_primaData::getLastId(  );
+//var_dump($lote);
+$code="M0000";
+if( isset($lote->id)){
+    $code = $code.($lote->id+1);
+}
+//echo $code;
+//echo "<br>";
+?>
 <div class="col-md-12 mb-2">
     <a href="index.php?view=materia_prima_view" class="btn btn-dark btn-circle btn-sm">
         <i class="fas fa-angle-left"></i>
@@ -12,7 +22,7 @@
 
         <div class="col-md-12 mt-1">
             <label for="codigo" class="form-label">Codigo</label>
-            <input name="codigo" type="text" class="form-control" id="codigo">
+            <input readonly name="codigo"  value="<?php echo $code;?>" type="text" class="form-control" id="codigo">
         </div>
 
 

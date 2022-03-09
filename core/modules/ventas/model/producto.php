@@ -129,6 +129,29 @@ class productoData { // nombre de tabla seguido de la palabra Data
 		return $array;
 	}
  
+		
+	public static function getLastId(){
+
+		$sql = "SELECT id FROM producto WHERE id=  (SELECT MAX(id) FROM producto) ";
+
+		$query = Executor::doit($sql);
+
+		$found = null;
+
+		$data = new productoData(); // aqui cambia
+
+		while($r = $query[0]->fetch_array()){
+
+			$data->id = $r['id'];
+			
+			$found = $data;
+			break;
+
+		}
+		return $found;
+	}
+
+
 
 }
 

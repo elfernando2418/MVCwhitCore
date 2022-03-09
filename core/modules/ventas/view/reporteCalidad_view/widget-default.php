@@ -38,6 +38,7 @@
 ?>
 
 <h1>MODULO CALIDAD </h1>
+<button class="btn btn-primary"  onclick="generarPdf2()"  >Descargar Reporte</button>
 <br><br>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
  
@@ -65,5 +66,17 @@ new Chart("myChart", {
     }
   }
 });
+
+
+
+
+
+
+
+function generarPdf2() {
+  console.log('wind2')
+window.open('pdfControlCalidad', '_black');
+
+}
 </script>
 

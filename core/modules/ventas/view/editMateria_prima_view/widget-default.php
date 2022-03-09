@@ -31,7 +31,7 @@
 
           <div class="col-md-12 mt-1">
               <label for="codigo" class="form-label">Codigo</label>
-              <input name="codigo" type="text" class="form-control" id="codigo" value="<?php echo $materia->codigo  ?>">
+              <input readonly name="codigo" type="text" class="form-control" id="codigo" value="<?php echo $materia->codigo  ?>">
           </div>
 
 

@@ -4,8 +4,17 @@
 
 
 $lotes = loteData::getAll( );
- 
+$idLast = productoData::getLastId(  );
+//var_dump($lote);
+$code="P0000";
+if( isset($idLast->id)){
+    $code = $code.($idLast->id+1);
+}
+//echo $code;
+//echo "<br>";
 ?>
+
+
 
 <div class="col-md-12 mb-2">
     <a href="index.php?view=producto_view" class="btn btn-dark btn-circle btn-sm">
@@ -19,7 +28,7 @@ $lotes = loteData::getAll( );
 
     <div class="col-md-12 mt-1">
             <label for="codigoProducto" class="form-label">Código Producto</label>
-            <input name="codigoProducto" type="text" class="form-control" id="codigoProducto">
+            <input readonly name="codigoProducto" value="<?php echo $code;?>"  type="text" class="form-control" id="codigoProducto">
         </div>
 
         <div class="col-md-12 mt-1">
@@ -69,7 +78,7 @@ $lotes = loteData::getAll( );
 
         <div class="col-md-12 mt-1">
             <label for="fecha_ingreso" class="form-label">Fecha de Ingreso</label>
-            <input onchange="fechaCaduca()" name="fecha_ingreso" type="date" class="form-control" id="fecha_ingreso">
+            <input onchange="fechaCaduca()" min="<?= date('Y-m-d'); ?>" name="fecha_ingreso" type="date" class="form-control" id="fecha_ingreso">
         </div>
 
 

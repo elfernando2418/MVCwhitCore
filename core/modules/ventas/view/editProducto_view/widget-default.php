@@ -32,7 +32,7 @@
           </div>
           <div class="col-md-12 mt-1">
               <label for="codigoProducto" class="form-label">Código Producto</label>
-              <input name="codigoProducto" type="text" class="form-control" id="codigoProducto"
+              <input readonly name="codigoProducto" type="text" class="form-control" id="codigoProducto"
                   value="<?php echo $producto->codigoProducto  ?>">
           </div>
 
@@ -97,7 +97,7 @@
 
           <div class="col-md-12 mt-1">
               <label for="fecha_ingreso" class="form-label">Fecha de Ingreso</label>
-              <input name="fecha_ingreso" type="date" class="form-control" id="fecha_ingreso"
+              <input name="fecha_ingreso" min="<?= date('Y-m-d'); ?>" type="date" class="form-control" id="fecha_ingreso"
                   value="<?php echo $producto->fecha_ingreso  ?>">
           </div>
           <div class="col-md-12 mt-1" style="display:none">

@@ -110,6 +110,32 @@ class usuarioData { // nombre de tabla seguido de la palabra Data
 	}
 	 
 	 
+	public static function getByData($email,$nombre,$telefono){
+
+		$sql = "SELECT * FROM usuario WHERE usuario.email = \"$email\" AND usuario.nombre =  \"$nombre\" AND usuario.telefono=  \"$telefono\"   AND usuario.status = 1";
+
+		$query = Executor::doit($sql);
+
+		$found = null;
+
+		$data = new usuarioData(); // aqui cambia
+
+		while($r = $query[0]->fetch_array()){
+
+			$data->id = $r['id'];
+			$data->password = $r['password'];
+			$found = $data;
+			break;
+
+		}
+		return $found;
+	}
+	public function updatePassword($password,$id){
+		
+		$sql = "UPDATE usuario SET password = \"$password\"  WHERE id = $id";
+		Executor::doit($sql);
+	}
+
 
 }
 

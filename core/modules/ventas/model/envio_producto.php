@@ -112,7 +112,29 @@ class envio_productoData { // nombre de tabla seguido de la palabra Data
 		Executor::doit($sql);
 	}
 
- 
+ 		
+	public static function getLastId(){
+
+		$sql = "SELECT id FROM envio_producto WHERE id=  (SELECT MAX(id) FROM envio_producto) ";
+
+		$query = Executor::doit($sql);
+
+		$found = null;
+
+		$data = new envio_productoData(); // aqui cambia
+
+		while($r = $query[0]->fetch_array()){
+
+			$data->id = $r['id'];
+			
+			$found = $data;
+			break;
+
+		}
+		return $found;
+	}
+
+
 
 }
 

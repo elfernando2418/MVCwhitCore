@@ -243,7 +243,6 @@ if (!isset($_SESSION['idUsuario']  )) {
     <script>
         function generarPdf() {
 
-
             window.open('pdfGENERATOR', '_black');
 
 

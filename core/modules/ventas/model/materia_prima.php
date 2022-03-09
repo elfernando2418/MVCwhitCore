@@ -85,6 +85,28 @@ class materia_primaData { // nombre de tabla seguido de la palabra Data
 		Executor::doit($sql);
 	}
 
+	
+	public static function getLastId(){
+
+		$sql = "SELECT id FROM materia_prima WHERE id=  (SELECT MAX(id) FROM materia_prima) ";
+
+		$query = Executor::doit($sql);
+
+		$found = null;
+
+		$data = new materia_primaData(); // aqui cambia
+
+		while($r = $query[0]->fetch_array()){
+
+			$data->id = $r['id'];
+			
+			$found = $data;
+			break;
+
+		}
+		return $found;
+	}
+
 }
 
 ?>

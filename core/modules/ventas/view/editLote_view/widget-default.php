@@ -29,7 +29,7 @@
 
         <div class="col-md-12 mt-1">
             <label for="codigo" class="form-label">Código</label>
-            <input name="codigo" type="text" class="form-control" id="codigo" value="<?php echo $lote->codigo  ?>">
+            <input readonly name="codigo" type="text" class="form-control" id="codigo" value="<?php echo $lote->codigo  ?>">
         </div>
         <div class="col-md-12 mt-1">
             <label for="numero" class="form-label">Número de lote</label>
@@ -37,7 +37,7 @@
         </div>
         <div class="col-md-12 mt-1">
             <label for="fecha_elaboracion" class="form-label">Fecha Elaboracion</label>
-            <input name="fecha_elaboracion" type="date" class="form-control" id="fecha_elaboracion" value="<?php echo $lote->fecha_elaboracion  ?>">
+            <input min="<?= date('Y-m-d'); ?>"  name="fecha_elaboracion" type="date" class="form-control" id="fecha_elaboracion" value="<?php echo $lote->fecha_elaboracion  ?>">
         </div>
 
 
